@@ -1,6 +1,6 @@
 # Use a specific version of nixpkgs from an bleeding-edge fork of github.com/NixOS/nixpkgs
 let
-  pkgs = import (fetchTarball "https://github.com/rstats-on-nix/nixpkgs/archive/bc30fa6c937a4598564bd0fa7114cbad2a3554aa.tar.gz") {};
+  pkgs = import (fetchTarball "https://github.com/rstats-on-nix/nixpkgs/archive/82d71ec08fcd0d4d710e11d3333536ea4627df15.tar.gz") {};
   # Add generic R packages required for this build
   rpkgs = with pkgs.rPackages; [
     BiocManager
