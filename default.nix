@@ -8,52 +8,53 @@ let
   rpkgs = with pkgs.rPackages; [
     BiocManager
     BiocBook
+    mia
   ];
 
   # Build mia package
-  mia = [
-    (pkgs.rPackages.buildRPackage {
-      name = "mia";
-      src = pkgs.fetchgit {
-        url = "https://github.com/microbiome/mia";
-        branchName = "devel";
-        rev = "8b8f686cb90ce2c9eb7f8539eb14a229a8487a3c";
-        sha256 = "sha256-w7jwKVOE4KIqrPl56CzenicV5NSc+o+krV2kgHaZiqU=";
-      };
-      # mia dependencies (see DESCRIPTION)
-      propagatedBuildInputs = builtins.attrValues {
-        inherit (pkgs.rPackages)
-          ape
-          BiocGenerics
-          BiocParallel
-          Biostrings
-          bluster
-          DECIPHER
-          decontam
-          DelayedArray
-          DelayedMatrixStats
-          DirichletMultinomial
-          dplyr
-          IRanges
-          MASS
-          MatrixGenerics
-          mediation
-          MultiAssayExperiment
-          rlang
-          S4Vectors
-          scater
-          scuttle
-          SingleCellExperiment
-          SummarizedExperiment
-          rbiom
-          tibble
-          tidyr
-          TreeSummarizedExperiment
-          vegan
-          ;
-      };
-    })
-  ];
+  # mia = [
+  #   (pkgs.rPackages.buildRPackage {
+  #     name = "mia";
+  #     src = pkgs.fetchgit {
+  #       url = "https://github.com/microbiome/mia";
+  #       branchName = "devel";
+  #       rev = "8b8f686cb90ce2c9eb7f8539eb14a229a8487a3c";
+  #       sha256 = "sha256-w7jwKVOE4KIqrPl56CzenicV5NSc+o+krV2kgHaZiqU=";
+  #     };
+  #     # mia dependencies (see DESCRIPTION)
+  #     propagatedBuildInputs = builtins.attrValues {
+  #       inherit (pkgs.rPackages)
+  #         ape
+  #         BiocGenerics
+  #         BiocParallel
+  #         Biostrings
+  #         bluster
+  #         DECIPHER
+  #         decontam
+  #         DelayedArray
+  #         DelayedMatrixStats
+  #         DirichletMultinomial
+  #         dplyr
+  #         IRanges
+  #         MASS
+  #         MatrixGenerics
+  #         mediation
+  #         MultiAssayExperiment
+  #         rlang
+  #         S4Vectors
+  #         scater
+  #         scuttle
+  #         SingleCellExperiment
+  #         SummarizedExperiment
+  #         rbiom
+  #         tibble
+  #         tidyr
+  #         TreeSummarizedExperiment
+  #         vegan
+  #         ;
+  #     };
+  #   })
+  # ];
 
   # Build miaTime package
   miatime = [
@@ -70,13 +71,14 @@ let
         builtins.attrValues {
           inherit (pkgs.rPackages)
             dplyr
+            scater
             S4Vectors
             SummarizedExperiment
             SingleCellExperiment
             vegan
+            mia
             ;
-        }
-        ++ [ mia ];
+        };
     })
   ];
 
@@ -238,7 +240,6 @@ let
     packages = [
       rpkgs
       miatime
-      mia
       spieceasi
       spring
       netcomi
@@ -251,7 +252,6 @@ let
     packages = [
       rpkgs
       miatime
-      mia
       spieceasi
       spring
       netcomi
