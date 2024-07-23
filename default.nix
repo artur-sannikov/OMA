@@ -2,7 +2,7 @@
 let
   pkgs =
     import
-      (fetchTarball "https://github.com/rstats-on-nix/nixpkgs/archive/0a6b0ea0f895208a490ec7fb3fe63232117511b7.tar.gz")
+      (fetchTarball "https://github.com/rstats-on-nix/nixpkgs/archive/f4ccb72b476a8b2eaf6ced48d3fa82306d177179.tar.gz")
       { };
   # Add generic R packages required for this build
   rpkgs = with pkgs.rPackages; [
@@ -17,8 +17,8 @@ let
       src = pkgs.fetchgit {
         url = "https://github.com/microbiome/mia";
         branchName = "devel";
-        rev = "b627edce620807af20d3ed85c6667f4b8ef8f2ea";
-        sha256 = "sha256-VJVQfl7LQzooc1NHgu0qAstPFiC9d/8hH23KODV1V0Y=";
+        rev = "8b8f686cb90ce2c9eb7f8539eb14a229a8487a3c";
+        sha256 = "sha256-w7jwKVOE4KIqrPl56CzenicV5NSc+o+krV2kgHaZiqU=";
       };
       # mia dependencies (see DESCRIPTION)
       propagatedBuildInputs = builtins.attrValues {
@@ -45,6 +45,7 @@ let
           scuttle
           SingleCellExperiment
           SummarizedExperiment
+          rbiom
           tibble
           tidyr
           TreeSummarizedExperiment
@@ -61,8 +62,8 @@ let
       src = pkgs.fetchgit {
         url = "https://github.com/microbiome/miaTime";
         branchName = "master";
-        rev = "9fe9771f7329fc991796eb79cc1e17ee06e1bc24";
-        sha256 = "sha256-IL9CbL0HWKlpmMHq1Rxen7+utzpw4qfb4NuVvM0N0oA=";
+        rev = "be1f2d97ebab3647a2b6cc6c5f643f131dc70b27";
+        sha256 = "sha256-rgi8SZtAW4z9SxQTKlA3cpZGt4GtNOA2/3usJJYaCFM=";
       };
       # miaTime dependencies (see DESCRIPTION)
       propagatedBuildInputs =
@@ -177,8 +178,8 @@ let
       src = pkgs.fetchgit {
         url = "https://github.com/microbiome/OMA";
         branchName = "devel";
-        rev = "67dd77ef36f7b90c416ef98ce5c8f2086f64fbdb";
-        sha256 = "sha256-U4fHmVKvoCq6YNeSgoT1eY1ZD6AiX+xiAXtq9pQl5Ak=";
+        rev = "aa00c4cf79a50d75be14d98e2fbea9c4ba71966f";
+        sha256 = "sha256-sPn8C2/MMrD4kCHmsWtHzAhGQA/kJu5nWZfel3sz1w8=";
       };
       # oma dependencies
       propagatedBuildInputs =
@@ -219,6 +220,7 @@ let
             MMUPHin
             gsEasy
             topGO
+            DT
             ;
         }
         ++ [
