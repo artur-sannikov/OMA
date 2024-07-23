@@ -5,7 +5,6 @@ on:
     branches:
       - devel
       - RELEASE_**
-      - docker
 
 jobs:
   build-push:
@@ -88,7 +87,7 @@ jobs:
           cache-to: type=local,dest=/tmp/.buildx-cache
           tags: ${{ steps.meta.outputs.tags }}
           build-args: |
-            BIOC_VERSION=RELEASE_3_19-R-4.4.1
+            BIOC_VERSION=${{ github.ref_name }}
 
       - name: 🚀 Push local Docker image to ghcr.io
         uses: docker/build-push-action@v4
@@ -99,7 +98,7 @@ jobs:
           cache-to: type=local,dest=/tmp/.buildx-cache
           tags: ${{ steps.meta.outputs.tags }}
           build-args: |
-            BIOC_VERSION=RELEASE_3_19-R-4.4.1
+            BIOC_VERSION=${{ github.ref_name }}
 
       - name: 📚 Recover pkg artifacts generated during build in local Docker container (pkg bundle and book)
         env:
