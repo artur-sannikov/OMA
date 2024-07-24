@@ -80,7 +80,7 @@ Below, we present the results using a heatmap visualization.
 #| fig-width: 8
 #| fig-height: 8
 
-library(ComplexHeatmap) 
+library(ComplexHeatmap)
 library(shadowtext)
 
 # Function for marking significant correlations with "X"
@@ -133,7 +133,7 @@ p
 ```
 
 ::: {.callout-tip}
-## Cross-correlation
+## Cross-association
 
-See [@sec-cross-correlation] for further information on correlation analyses.
+See [@sec-cross-correlation] for further information on correlation and association analyses.
 :::
