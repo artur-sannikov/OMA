@@ -49,7 +49,8 @@ library(qgraph)
 # Create correlation network plot
 qgraph(
     res$cor, layout = "spring", labels = colnames(res$cor),
-    label.cex = 3, theme = "colorblind")
+    label.cex = 1.2, theme = "colorblind",
+    node.width = 1.5, node.height = 2)
 ```
 
 You can find more on networks from [@sec-network-learning].
