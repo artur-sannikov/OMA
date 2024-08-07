@@ -5,6 +5,7 @@ on:
     branches:
       - devel
       - RELEASE_**
+      - do-not-install-miniconda
 
 jobs:
   build-push:
