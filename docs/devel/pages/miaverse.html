@@ -627,9 +627,9 @@ document.addEventListener("click", function (event) {
 }
 </style>
 </div>
-<p>This chapter provides an overview of the miaverse ecosystem. <a href="#sec-data-containers" class="quarto-xref"><span>Section 2.1</span></a> aims to describe the relationship between data containers utilized in miaverse. <a href="#sec-packages" class="quarto-xref"><span>Section 2.2</span></a> details the packages involved, while <a href="#sec-installation" class="quarto-xref"><span>Section 2.3</span></a> provides guidance on installing these packages.</p>
+<p>This chapter provides an overview of the miaverse ecosystem. <a href="#sec-data-containers" class="quarto-xref"><span>Section 2.1</span></a> aims to describe the relationship between data containers utilized in <code>miaverse</code>. <a href="#sec-packages" class="quarto-xref"><span>Section 2.2</span></a> details the packages involved, while <a href="#sec-installation" class="quarto-xref"><span>Section 2.3</span></a> provides guidance on installing these packages.</p>
 <p>miaverse (MIcrobiome Analysis uniVERSE) is an actively developed R/Bioconductor framework for microbiome downstream analysis. It becomes particularly relevant when working with abundance tables derived from sequencing data, whether from shotgun metagenomics or 16S rRNA sequencing. Before utilizing miaverse, sequencing data must undergo preprocessing to convert raw sequence reads into abundance tables.</p>
-<p>miaverse consists of multiple R/Bioc packages and this online book that you are reading. The idea is not only to offer tools for microbiome downstream analysis but also to serve as a resource for valuable insights, offering guidance on conducting microbiome data analysis and developing effective microbiome data science workflows.</p>
+<p><code>miaverse</code> consists of multiple R/Bioc packages and this online book that you are reading. The idea is not only to offer tools for microbiome downstream analysis but also to serve as a resource for valuable insights, offering guidance on conducting microbiome data analysis and developing effective microbiome data science workflows.</p>
 <p>The key concept of miaverse lies in its utilization of <code>SummarizedExperiment</code>-based data containers. This design choice enhances interoperability and versatility within the broader Bioconductor framework, facilitating access to an expanding array of tools. In practice, this approach allows for the integration of promising methods from related fields, such as single-cell sequencing.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="figures/FigureOverviewV2_mod.png" class="img-fluid figure-img" style="width:100.0%"></p>
@@ -637,13 +637,13 @@ document.addEventListener("click", function (event) {
 </div>
 <section id="sec-data-containers" class="level2 page-columns page-full" data-number="2.1"><h2 data-number="2.1" class="anchored" data-anchor-id="sec-data-containers">
 <span class="header-section-number">2.1</span> Data containers</h2>
-<p>As discussed, miaverse is built upon <code>TreeSummarizedExperiment (TreeSE)</code> data container. <code>TreeSummarizedExperiment</code> is expanded from <code>SingleCellExperiment (SCE)</code> by incorporating additional slots tailored for microbiome analysis. <code>SingleCellExperiment</code> class which is designed for single-cell sequencing <span class="citation" data-cites="R_SingleCellExperiment">(<a href="#ref-R_SingleCellExperiment" role="doc-biblioref">Lun and Risso 2020</a>)</span>. Bioconductor offers wide variety of tools for this field including online book Orchestrating Single-Cell Analysis in Bioconductor (OSCA) <span class="citation" data-cites="Amezquita2020">(<a href="#ref-Amezquita2020" role="doc-biblioref">Amezquita et al. 2020</a>)</span>. <code>SingleCellExperiment</code>, on the other hand, is further derived from <code>SummarizedExperiment (SE)</code> class. This hierarchical relationship among data containers means that all methods applicable to <code>SingleCellExperiment</code> and <code>SummarizedExperiment</code> objects can also be applied to <code>TreeSummarizedExperiment</code> objects.</p>
+<p>As discussed, miaverse is built upon <code>TreeSummarizedExperiment (TreeSE)</code> data container. <code>TreeSummarizedExperiment</code> is expanded from <code>SingleCellExperiment (SCE)</code> by incorporating additional slots tailored for microbiome analysis. <code>SingleCellExperiment</code> class is designed for single-cell sequencing <span class="citation" data-cites="R_SingleCellExperiment">(<a href="#ref-R_SingleCellExperiment" role="doc-biblioref">Lun and Risso 2020</a>)</span>. Bioconductor offers wide variety of tools for this field including online book Orchestrating Single-Cell Analysis in Bioconductor (OSCA) <span class="citation" data-cites="Amezquita2020">(<a href="#ref-Amezquita2020" role="doc-biblioref">Amezquita et al. 2020</a>)</span>. <code>SingleCellExperiment</code>, on the other hand, is further derived from <code>SummarizedExperiment (SE)</code> class. This hierarchical relationship among data containers means that all methods applicable to <code>SingleCellExperiment</code> and <code>SummarizedExperiment</code> objects can also be applied to <code>TreeSummarizedExperiment</code> objects.</p>
 <div class="no-row-height column-margin column-container"><div id="ref-Amezquita2020" class="csl-entry" role="listitem">
 Amezquita, Robert, Aaron Lun, Stephanie Hicks, and Raphael Gottardo. 2020. <em>Orchestrating Single-Cell Analysis with Bioconductor</em>. Bioconductor. <a href="https://bioconductor.org/books/release/OSCA/">https://bioconductor.org/books/release/OSCA/</a>.
 </div></div><ul>
 <li><p><code>SummarizedExperiment</code> (<code>SE</code>) <span class="citation" data-cites="R_SummarizedExperiment">(<a href="#ref-R_SummarizedExperiment" role="doc-biblioref">Morgan et al. 2020</a>)</span> is a generic and highly optimized container for complex data structures. It has become a common choice for analyzing various types of biomedical profiling data, such as RNAseq, ChIp-Seq, microarrays, flow cytometry, proteomics, and single-cell sequencing.</p></li>
 <li><p><code>SingeCellExperiment</code> (<code>SCE</code>) <span class="citation" data-cites="R_SingleCellExperiment">(<a href="#ref-R_SingleCellExperiment" role="doc-biblioref">Lun and Risso 2020</a>)</span> was developed as an extension to store copies of data to same data container.</p></li>
-<li><p><code>TreeSummarizedExperiment</code> (<code>TreeSE</code>) <span class="citation" data-cites="R_TreeSummarizedExperiment">(<a href="#ref-R_TreeSummarizedExperiment" role="doc-biblioref">Huang 2020</a>)</span> was developed as an extension to incorporate hierarchical information (such as phylogenetic trees and sample hierarchies) and reference sequences.</p></li>
+<li><p><code>TreeSummarizedExperiment</code> (<code>TreeSE</code>) <span class="citation" data-cites="R_TreeSummarizedExperiment">(<a href="#ref-R_TreeSummarizedExperiment" role="doc-biblioref">R. Huang 2020</a>)</span> was developed as an extension to incorporate hierarchical information (such as phylogenetic trees and sample hierarchies) and reference sequences.</p></li>
 </ul>
 <div class="no-row-height column-margin column-container"><div id="ref-R_SummarizedExperiment" class="csl-entry" role="listitem">
 Morgan, Martin, Valerie Obenchain, Jim Hester, and Hervé Pagès. 2020. <em>SummarizedExperiment: SummarizedExperiment Container</em>. <a href="https://bioconductor.org/packages/SummarizedExperiment">https://bioconductor.org/packages/SummarizedExperiment</a>.
@@ -668,7 +668,7 @@ Ramos, Marcel, Lucas Schiffer, Angela Re, Rimsha Azhar, Azfar Basunia, Carmen Ro
 <p>Especially, Bioconductor packages include comprehensive manuals as they are required. Follow the links below to find package vignettes and other materials showing the utilization of packages and their methods.</p>
 <section id="mia-package-family" class="level3 page-columns page-full" data-number="2.2.1"><h3 data-number="2.2.1" class="anchored" data-anchor-id="mia-package-family">
 <span class="header-section-number">2.2.1</span> mia package family</h3>
-<p>The mia package family provides general methods for microbiome data wrangling, analysis and visualization.</p>
+<p>The <code>mia</code> package family provides general methods for microbiome data wrangling, analysis and visualization.</p>
 <ul>
 <li>
 <a href="https://microbiome.github.io/mia/">mia</a>: Microbiome analysis tools <span class="citation" data-cites="R_mia">(<a href="#ref-R_mia" role="doc-biblioref">Ernst, Shetty, and Lahti 2020</a>)</span>
@@ -690,38 +690,59 @@ Ernst, Felix G. M., Tuomas Borman, and Leo Lahti. 2022. <em>miaViz: Microbiome A
 Simsek, Yagmur, Leo Lahti, Daniel Garza, and Karoline Faust. 2021. <span>“miaSim r Package.”</span> <a href="https://microbiome.github.io/miaSim">microbiome.github.io/miaSim</a>.
 </div><div id="ref-Lahti2021" class="csl-entry" role="listitem">
 Lahti, L. 2021. <em>miaTime: Time Series Analysis</em>.
-</div></div></section><section id="sec-sub-diff-abund" class="level3" data-number="2.2.2"><h3 data-number="2.2.2" class="anchored" data-anchor-id="sec-sub-diff-abund">
+</div></div></section><section id="sec-sub-diff-abund" class="level3 page-columns page-full" data-number="2.2.2"><h3 data-number="2.2.2" class="anchored" data-anchor-id="sec-sub-diff-abund">
 <span class="header-section-number">2.2.2</span> SE supporting packages</h3>
 <p>The following DA methods support <code>(Tree)SummarizedExperiment</code>.</p>
 <ul>
 <li>
-<a href="https://bioconductor.org/packages/devel/bioc/html/ANCOMBC.html">ANCOMBC</a> for differential abundance analysis</li>
+<a href="https://bioconductor.org/packages/devel/bioc/html/ANCOMBC.html">ANCOMBC</a> <span class="citation" data-cites="ancombc2020">(<a href="#ref-ancombc2020" role="doc-biblioref">Lin and Peddada 2020</a>)</span> for differential abundance analysis</li>
 <li>
-<a href="https://bioconductor.org/packages/release/bioc/vignettes/benchdamic/inst/doc/intro.html">benchdamic</a> for benchmarking differential abundance methods</li>
+<a href="https://bioconductor.org/packages/release/bioc/vignettes/benchdamic/inst/doc/intro.html">benchdamic</a> <span class="citation" data-cites="Calgaro2022">(<a href="#ref-Calgaro2022" role="doc-biblioref">Calgaro et al. 2022</a>)</span> for benchmarking differential abundance methods</li>
 <li>
-<a href="https://www.bioconductor.org/packages/release/bioc/html/ALDEx2.html">ALDEx2</a> for differential abundance analysis</li>
-</ul></section><section id="other-relevant-packages" class="level3 page-columns page-full" data-number="2.2.3"><h3 data-number="2.2.3" class="anchored" data-anchor-id="other-relevant-packages">
+<a href="https://www.bioconductor.org/packages/release/bioc/html/ALDEx2.html">ALDEx2</a> <span class="citation" data-cites="Gloor2016">(<a href="#ref-Gloor2016" role="doc-biblioref">Gloor, Macklaim, and Fernandes 2016</a>)</span> for differential abundance analysis</li>
+</ul><div class="no-row-height column-margin column-container"><div id="ref-ancombc2020" class="csl-entry" role="listitem">
+Lin, Huang, and Shyamal Das Peddada. 2020. <span>“Analysis of Compositions of Microbiomes with Bias Correction.”</span> <em>Nature Communications</em> 11 (1): 1–11. https://doi.org/<a href="https://doi.org/10.1038/s41467-020-17041-7">https://doi.org/10.1038/s41467-020-17041-7</a>.
+</div><div id="ref-Calgaro2022" class="csl-entry" role="listitem">
+Calgaro, Matteo, Chiara Romualdi, Davide Risso, and Nicola Vitulo. 2022. <span>“Benchdamic: Benchmarking of Differential Abundance Methods for Microbiome Data.”</span> <em>Bioinformatics</em> 39 (1). <a href="https://doi.org/10.1093/bioinformatics/btac778">https://doi.org/10.1093/bioinformatics/btac778</a>.
+</div><div id="ref-Gloor2016" class="csl-entry" role="listitem">
+Gloor, Gregory B., Jean M. Macklaim, and Andrew D. Fernandes. 2016. <span>“Displaying <span>Variation</span> in <span>Large Datasets</span>: <span>Plotting</span> a <span>Visual Summary</span> of <span>Effect Sizes</span>.”</span> <em>Journal of Computational and Graphical Statistics</em> 25 (3): 971–79. <a href="https://doi.org/10.1080/10618600.2015.1131161">https://doi.org/10.1080/10618600.2015.1131161</a>.
+</div></div></section><section id="other-relevant-packages" class="level3 page-columns page-full" data-number="2.2.3"><h3 data-number="2.2.3" class="anchored" data-anchor-id="other-relevant-packages">
 <span class="header-section-number">2.2.3</span> Other relevant packages</h3>
 <ul>
 <li>
-<a href="https://github.com/EBI-Metagenomics/MGnifyR">MGnifyR</a> for accessing and processing MGnify data in R
+<p><a href="https://github.com/EBI-Metagenomics/MGnifyR">MGnifyR</a> for accessing and processing MGnify data in R</p>
 <ul>
 <li><a href="https://docs.mgnify.org/src/notebooks_list.html">MGnify Notebooks</a></li>
 <li><a href="https://github.com/EBI-Metagenomics/notebooks">EMBL-EBI MGnify user guides and resources</a></li>
 </ul>
 </li>
-<li>
-<a href="https://github.com/zhouhj1994/LinDA">LinDA</a> for differential abundance analysis</li>
-<li>
-<a href="https://vegandevs.github.io/vegan/">vegan</a> for community ecologists</li>
-<li>
-<a href="http://bioconductor.org/packages/devel/bioc/html/philr.html">philr</a> (<span class="citation" data-cites="Silverman2017">Silverman et al. (<a href="#ref-Silverman2017" role="doc-biblioref">2017</a>)</span>) phylogeny-aware phILR transformation</li>
-<li>
-<a href="https://bioconductor.org/packages/release/bioc/html/MicrobiotaProcess.html">MicrobiotaProcess</a> for the “tidy” analysis of microbiome and other ecological data</li>
-<li>
-<a href="https://microsud.github.io/Tools-Microbiome-Analysis/">Tools for Microbiome Analysis</a> site listed over 130 R packages for microbiome data science in 2023. Many of these are not in Bioconductor, or do not directly support the data containers used in this book but can be often used with minor modifications. The phyloseq-based tools can be used by converting the TreeSE data into phyloseq with <code>convertToPhyloseq</code>.</li>
-</ul><div class="no-row-height column-margin column-container"><div id="ref-Silverman2017" class="csl-entry" role="listitem">
+<li><p><a href="https://github.com/zhouhj1994/LinDA">LinDA</a><span class="citation" data-cites="Zhou2022">(<a href="#ref-Zhou2022" role="doc-biblioref">Zhou et al. 2022</a>)</span> for differential abundance analysis</p></li>
+<li><p><a href="https://vegandevs.github.io/vegan/">vegan</a> <span class="citation" data-cites="R_vegan">(<a href="#ref-R_vegan" role="doc-biblioref">Oksanen et al. 2020</a>)</span> for community ecologists</p></li>
+<li><p><a href="https://github.com/qpmnguyen/CBEA/">CBEA</a> <span class="citation" data-cites="Nguyen2022">(<a href="#ref-Nguyen2022" role="doc-biblioref">Nguyen QP, n.d.</a>)</span> for taxonomic enrichment analysis</p></li>
+<li><p><a href="https://github.com/BiotechPedro/microSTASIS">microSTASIS</a> <span class="citation" data-cites="Sanchez2022">(<a href="#ref-Sanchez2022" role="doc-biblioref">Sánchez-Sánchez, Santonja, and Benítez-Páez 2022</a>)</span> for microbiota stability assessment via iterative clustering</p></li>
+<li><p><a href="https://github.com/EvaYiwenWang/PLSDAbatch">PLSDAbatch</a> <span class="citation" data-cites="Wang2023">(<a href="#ref-Wang2023" role="doc-biblioref">Wang and Lê Cao 2023</a>)</span> for batch effect correction</p></li>
+<li><p><a href="https://github.com/csoneson/treeclimbR">treeclimbR</a> <span class="citation" data-cites="Hang2021">(<a href="#ref-Hang2021" role="doc-biblioref">S. Huang Ruizhu 2021</a>)</span> for finding optimal signal levels in a tree</p></li>
+<li><p><a href="https://github.com/MicrobialGenomics-IrsicaixaOrg/dar">dar</a> for differential abundance testing</p></li>
+<li><p><a href="https://github.com/microbiome/iSEEtree">iSEEtree</a> for interactive visualisation of microbiome data</p></li>
+<li><p><a href="http://bioconductor.org/packages/devel/bioc/html/philr.html">philr</a> (<span class="citation" data-cites="Silverman2017">Silverman et al. (<a href="#ref-Silverman2017" role="doc-biblioref">2017</a>)</span>) phylogeny-aware phILR transformation</p></li>
+<li><p><a href="https://bioconductor.org/packages/release/bioc/html/MicrobiotaProcess.html">MicrobiotaProcess</a> <span class="citation" data-cites="Xu2023">(<a href="#ref-Xu2023" role="doc-biblioref">Xu et al. 2023</a>)</span> for the “tidy” analysis of microbiome and other ecological data</p></li>
+<li><p><a href="https://microsud.github.io/Tools-Microbiome-Analysis/">Tools for Microbiome Analysis</a> site listed over 130 R packages for microbiome data science in 2023. Many of these are not in Bioconductor, or do not directly support the data containers used in this book but can be often used with minor modifications. The phyloseq-based tools can be used by converting the TreeSE data into phyloseq with <code>convertToPhyloseq()</code>.</p></li>
+</ul><div class="no-row-height column-margin column-container"><div id="ref-Zhou2022" class="csl-entry" role="listitem">
+Zhou, Huijuan, Kejun He, Jun Chen, and Xianyang Zhang. 2022. <span>“<span>LinDA</span>: Linear Models for Differential Abundance Analysis of Microbiome Compositional Data.”</span> <em>Genome Biology</em> 23 (1): 95. <a href="https://doi.org/10.1186/s13059-022-02655-5">https://doi.org/10.1186/s13059-022-02655-5</a>.
+</div><div id="ref-R_vegan" class="csl-entry" role="listitem">
+Oksanen, Jari, F. Guillaume Blanchet, Michael Friendly, Roeland Kindt, Pierre Legendre, Dan McGlinn, Peter R. Minchin, et al. 2020. <em>Vegan: Community Ecology Package</em>. <a href="https://CRAN.R-project.org/package=vegan">https://CRAN.R-project.org/package=vegan</a>.
+</div><div id="ref-Nguyen2022" class="csl-entry" role="listitem">
+Nguyen QP, Frost HR, Hoen AG. n.d. <span>“<span class="nocase">CBEA: Competitive balances for taxonomic enrichment analysis</span>.”</span> <em>PLoS Comput Biol</em> 18 (5). <a href="https://doi.org/10.1371/journal.pcbi.1010091">https://doi.org/10.1371/journal.pcbi.1010091</a>.
+</div><div id="ref-Sanchez2022" class="csl-entry" role="listitem">
+Sánchez-Sánchez, Pedro, Francisco J Santonja, and Alfonso Benítez-Páez. 2022. <span>“Assessment of Human Microbiota Stability Across Longitudinal Samples Using Iteratively Growing-Partitioned Clustering.”</span> <em>Briefings in Bioinformatics</em> 23 (2): bbac055. <a href="https://doi.org/10.1093/bib/bbac055">https://doi.org/10.1093/bib/bbac055</a>.
+</div><div id="ref-Wang2023" class="csl-entry" role="listitem">
+Wang, Yiwen, and Kim-Anh Lê Cao. 2023. <span>“<span class="nocase">PLSDA-batch:</span> A Multivariate Framework to Correct for Batch Effects in Microbiome Data.”</span> <em>Briefings in Bioinformatics</em> 24 (2): bbac622. <a href="https://doi.org/10.1093/bib/bbac622">https://doi.org/10.1093/bib/bbac622</a>.
+</div><div id="ref-Hang2021" class="csl-entry" role="listitem">
+Huang, Soneson, Ruizhu. 2021. <span>“<span class="nocase">treeclimbR</span> Pinpoints the Data-Dependent Resolution of Hierarchical Hypotheses.”</span> <em>Genome Biology</em> 22 (2). <a href="https://doi.org/10.1186/s13059-021-02368-1">https://doi.org/10.1186/s13059-021-02368-1</a>.
+</div><div id="ref-Silverman2017" class="csl-entry" role="listitem">
 Silverman, Justin D, Alex D Washburne, Sayan Mukherjee, and Lawrence A David. 2017. <span>“A Phylogenetic Transform Enhances Analysis of Compositional Microbiota Data.”</span> <em>eLife</em> 6. <a href="https://doi.org/10.7554/eLife.21887">https://doi.org/10.7554/eLife.21887</a>.
+</div><div id="ref-Xu2023" class="csl-entry" role="listitem">
+Xu, Shuangbin, Li Zhan, Wenli Tang, Qianwen Wang, Zehan Dai, Lang Zhou, Tingze Feng, et al. 2023. <span>“<span>MicrobiotaProcess</span>: <span>A</span> Comprehensive <span>R</span> Package for Deep Mining Microbiome.”</span> <em><span>The Innovation</span></em> 4 (2): 100388. <a href="https://doi.org/10.1016/j.xinn.2023.100388">https://doi.org/10.1016/j.xinn.2023.100388</a>.
 </div></div></section><section id="open-microbiome-data" class="level3" data-number="2.2.4"><h3 data-number="2.2.4" class="anchored" data-anchor-id="open-microbiome-data">
 <span class="header-section-number">2.2.4</span> Open microbiome data</h3>
 <p>Hundreds of published microbiome datasets are readily available in these data containers (see <a href="import.html#sec-example-data" class="quarto-xref"><span>Section 4.2</span></a>).</p>
@@ -799,9 +820,11 @@ Summary
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>TreeSummarizedExperiment is derived from SummarizedExperiment class.</li>
-<li>miaverse is based on TreeSummarizedExperiment data container.</li>
-<li>We can borrow methods from packages utilizing SingleCellExperiment and SummarizedExperiment.</li>
+<li>
+<code>TreeSummarizedExperiment</code> is derived from <code>SummarizedExperiment</code> class.</li>
+<li>
+<code>miaverse</code> is based on <code>TreeSummarizedExperiment</code> data container.</li>
+<li>We can borrow methods from packages utilizing <code>SingleCellExperiment</code> and <code>SummarizedExperiment</code>.</li>
 </ul>
 </div>
 </div>
