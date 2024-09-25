@@ -27,16 +27,16 @@
         # pkgs = nixpkgs.legacyPackages.${system};
         pkgs = import nixpkgs {
           inherit system;
-          overlays = [
-            (final: prev: {
-              miaPkg = prev.callPackage (import "${mia}/flake.nix") { };
-            })
-          ];
+          # overlays = [
+          #   (final: prev: {
+          #     miaPkg = prev.callPackage (import "${mia}/flake.nix") { };
+          #   })
+          # ];
         };
         SpiecEasiPkg = SpiecEasi.packages.${system}.default;
         SPRINGPkg = SPRING.packages.${system}.default;
         NetCoMiPkg = NetCoMi.packages.${system}.default;
-        # miaPkg = mia.packages.${system}.default;
+        miaPkg = mia.packages.${system}.default;
         miaTimePkg = miaTime.packages.${system}.default;
         OMA = pkgs.rPackages.buildRPackage {
           name = "OMA";
@@ -46,69 +46,69 @@
               inherit (pkgs.rPackages)
                 ALDEx2
                 # ANCOMBC
-                # ape
-                # biclust
-                # BiocBook
-                # BiocManager
-                # BiocParallel
-                # Biostrings
-                # bluster
-                # caret
-                # circlize
-                # cluster
-                # cobiclust
-                # ComplexHeatmap
-                # corpcor
-                # curatedMetagenomicData
-                # dada2
-                # dendextend
-                # devtools
-                # DirichletMultinomial
-                # dplyr
-                # DT
-                # factoextra
-                # forcats
-                # fido
-                # ggplot2
-                # ggpubr
-                # ggtree
-                # glmnet
-                # glue
-                # gtools
-                # gsEasy
-                # igraph
-                # kableExtra
-                # knitr
-                # Maaslin2
-                # microbiome
-                # microbiomeDataSets
-                # MicrobiomeStat
-                # mikropml
-                # MMUPHin
-                # MOFA2
-                # multiview
-                # NbClust
-                # NMF
-                # patchwork
-                # phyloseq
-                # plotly
-                # purrr
-                # qgraph
-                # RColorBrewer
-                # rebook
-                # reshape2
-                # reticulate
-                # rgl
-                # ROCR
-                # scales
-                # scater
-                # sechm
-                # sessioninfo
-                # shadowtext
-                # stringr
-                # SuperLearner
-                # tidyverse
-                # topGO
+                ape
+                biclust
+                BiocBook
+                BiocManager
+                BiocParallel
+                Biostrings
+                bluster
+                caret
+                circlize
+                cluster
+                cobiclust
+                ComplexHeatmap
+                corpcor
+                # curatedMetagenomicData # ENforces mia 1.12
+                dada2
+                dendextend
+                devtools
+                DirichletMultinomial
+                dplyr
+                DT
+                factoextra
+                forcats
+                fido
+                ggplot2
+                ggpubr
+                ggtree
+                glmnet
+                glue
+                gtools
+                gsEasy
+                igraph
+                kableExtra
+                knitr
+                Maaslin2
+                microbiome
+                microbiomeDataSets
+                MicrobiomeStat
+                mikropml
+                MMUPHin
+                MOFA2
+                multiview
+                NbClust
+                NMF
+                patchwork
+                phyloseq
+                plotly
+                purrr
+                qgraph
+                RColorBrewer
+                rebook
+                reshape2
+                reticulate
+                rgl
+                ROCR
+                scales
+                scater
+                sechm
+                sessioninfo
+                shadowtext
+                stringr
+                SuperLearner
+                tidyverse
+                topGO
                 vegan
                 WGCNA
                 xgboost
@@ -118,7 +118,7 @@
               SpiecEasiPkg
               SPRINGPkg
               NetCoMiPkg
-              pkgs.miaPkg
+              miaPkg
               miaTimePkg
             ];
         };
