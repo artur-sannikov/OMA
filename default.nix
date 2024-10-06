@@ -2,7 +2,7 @@
 let
   pkgs =
     import
-      (fetchTarball "https://github.com/rstats-on-nix/nixpkgs/archive/0a6b0ea0f895208a490ec7fb3fe63232117511b7.tar.gz")
+      (fetchTarball "https://github.com/rstats-on-nix/nixpkgs/archive/dcb2b8248a40f786c83ca16ef73a518d7f8a902d.tar.gz")
       { };
   # Add generic R packages required for this build
   rpkgs = with pkgs.rPackages; [
@@ -17,8 +17,8 @@ let
       src = pkgs.fetchgit {
         url = "https://github.com/microbiome/mia";
         branchName = "devel";
-        rev = "b627edce620807af20d3ed85c6667f4b8ef8f2ea";
-        sha256 = "sha256-VJVQfl7LQzooc1NHgu0qAstPFiC9d/8hH23KODV1V0Y=";
+        rev = "1923e870e240433f56056f437b8695c2396e3ce5";
+        sha256 = "sha256-9NGr9OWxVPTaEDjBkDoYUSqqEv87rUNryfq2mY07TNY=";
       };
       # mia dependencies (see DESCRIPTION)
       propagatedBuildInputs = builtins.attrValues {
@@ -33,6 +33,7 @@ let
           DelayedArray
           DelayedMatrixStats
           DirichletMultinomial
+          DT
           dplyr
           IRanges
           MASS
@@ -61,8 +62,8 @@ let
       src = pkgs.fetchgit {
         url = "https://github.com/microbiome/miaTime";
         branchName = "master";
-        rev = "9fe9771f7329fc991796eb79cc1e17ee06e1bc24";
-        sha256 = "sha256-IL9CbL0HWKlpmMHq1Rxen7+utzpw4qfb4NuVvM0N0oA=";
+        rev = "f66d54f88d1480b6e9d8563edfd86dac8c844c7a";
+        sha256 = "sha256-FzlKz9QzpXa20/N6JtKShH0E4h5MMTTVHVKG37lqAV4=";
       };
       # miaTime dependencies (see DESCRIPTION)
       propagatedBuildInputs =
