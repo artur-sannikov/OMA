@@ -1,6 +1,6 @@
 {
   "nodes": {
-    "NetCoMi": {
+    "NetCoMi-flake": {
       "inputs": {
         "SPRING": "SPRING",
         "SpiecEasi": "SpiecEasi_2",
@@ -43,7 +43,7 @@
         "type": "github"
       }
     },
-    "SPRING_2": {
+    "SPRING-flake": {
       "inputs": {
         "SpiecEasi": "SpiecEasi_3",
         "flake-utils": "flake-utils_6",
@@ -84,6 +84,26 @@
         "type": "github"
       }
     },
+    "SpiecEasi-flake": {
+      "inputs": {
+        "flake-utils": "flake-utils_7",
+        "nixpkgs": "nixpkgs_7"
+      },
+      "locked": {
+        "lastModified": 1726562359,
+        "narHash": "sha256-Y4uxV7RLzy+Av+l5JsOPrw66DNn/5qdZzq31naSsoWA=",
+        "owner": "artur-sannikov",
+        "repo": "SpiecEasi",
+        "rev": "e43e9ff8ab89dd9afeb6f460537f8c1f456ae2d2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "artur-sannikov",
+        "ref": "nix-flakes",
+        "repo": "SpiecEasi",
+        "type": "github"
+      }
+    },
     "SpiecEasi_2": {
       "inputs": {
         "flake-utils": "flake-utils_3",
@@ -115,26 +135,6 @@
         "owner": "artur-sannikov",
         "repo": "SpiecEasi",
         "rev": "16aca21d30dac3083317fcbbfa6a6e4c65783ebe",
-        "type": "github"
-      },
-      "original": {
-        "owner": "artur-sannikov",
-        "ref": "nix-flakes",
-        "repo": "SpiecEasi",
-        "type": "github"
-      }
-    },
-    "SpiecEasi_4": {
-      "inputs": {
-        "flake-utils": "flake-utils_7",
-        "nixpkgs": "nixpkgs_7"
-      },
-      "locked": {
-        "lastModified": 1726562359,
-        "narHash": "sha256-Y4uxV7RLzy+Av+l5JsOPrw66DNn/5qdZzq31naSsoWA=",
-        "owner": "artur-sannikov",
-        "repo": "SpiecEasi",
-        "rev": "e43e9ff8ab89dd9afeb6f460537f8c1f456ae2d2",
         "type": "github"
       },
       "original": {
@@ -324,17 +324,17 @@
         "type": "github"
       }
     },
-    "mia": {
+    "mia-flake": {
       "inputs": {
         "flake-utils": "flake-utils_9",
         "nixpkgs": "nixpkgs_8"
       },
       "locked": {
-        "lastModified": 1726573953,
-        "narHash": "sha256-HlsYiekE69OMuNKFsjx359CKpwFxhlrnCtdro6qjtZA=",
+        "lastModified": 1728559054,
+        "narHash": "sha256-TRoTN+mo3p/t9zEKvc612j6HBFeZfjZvrukKqmCuWp4=",
         "owner": "artur-sannikov",
         "repo": "mia",
-        "rev": "6cb5116a3a682bee94536f9133565c993f4326c6",
+        "rev": "78e56f0d248c56588597159902df29a5228ecbe9",
         "type": "github"
       },
       "original": {
@@ -344,7 +344,7 @@
         "type": "github"
       }
     },
-    "miaTime": {
+    "miaTime-flake": {
       "inputs": {
         "flake-utils": "flake-utils_10",
         "nixpkgs": "nixpkgs_9"
@@ -494,11 +494,11 @@
     },
     "nixpkgs_8": {
       "locked": {
-        "lastModified": 1727335715,
-        "narHash": "sha256-1uw3y94dA4l22LkqHRIsb7qr3rV5XdxQFqctINfx8Cc=",
+        "lastModified": 1728538411,
+        "narHash": "sha256-f0SBJz1eZ2yOuKUr5CA9BHULGXVSn6miBuUWdTyhUhU=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "28b5b8af91ffd2623e995e20aee56510db49001a",
+        "rev": "b69de56fac8c2b6f8fd27f2eca01dcda8e0a4221",
         "type": "github"
       },
       "original": {
@@ -526,12 +526,12 @@
     },
     "root": {
       "inputs": {
-        "NetCoMi": "NetCoMi",
-        "SPRING": "SPRING_2",
-        "SpiecEasi": "SpiecEasi_4",
+        "NetCoMi-flake": "NetCoMi-flake",
+        "SPRING-flake": "SPRING-flake",
+        "SpiecEasi-flake": "SpiecEasi-flake",
         "flake-utils": "flake-utils_8",
-        "mia": "mia",
-        "miaTime": "miaTime",
+        "mia-flake": "mia-flake",
+        "miaTime-flake": "miaTime-flake",
         "nixpkgs": "nixpkgs_10"
       }
     },
