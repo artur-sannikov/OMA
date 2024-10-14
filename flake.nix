@@ -9,6 +9,7 @@
     SPRING-flake.url = "github:artur-sannikov/SPRING/nix-flakes";
     NetCoMi-flake.url = "github:artur-sannikov/NetCoMi/nix-flakes";
     miaTime-flake.url = "github:artur-sannikov/miaTime/nix-flakes";
+    miaViz-flake.url = "github:artur-sannikov/miaViz/nix-flakes";
   };
 
   outputs =
@@ -21,6 +22,7 @@
       SPRING-flake,
       NetCoMi-flake,
       miaTime-flake,
+      miaViz-flake,
       ...
     }:
     flake-utils.lib.eachDefaultSystem (
@@ -41,6 +43,7 @@
         SPRING = SPRING-flake.packages.${system}.default;
         NetCoMi = NetCoMi-flake.packages.${system}.default;
         miaTime = miaTime-flake.packages.${system}.default;
+        miaViz = miaViz-flake.packages.${system}.default;
         OMA = pkgs.rPackages.buildRPackage {
           name = "OMA";
           src = self;
@@ -122,6 +125,7 @@
               SPRING
               NetCoMi
               miaTime
+              miaViz
             ];
         };
         R = with pkgs; [
