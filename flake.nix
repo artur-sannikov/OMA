@@ -10,6 +10,7 @@
     NetCoMi-flake.url = "github:artur-sannikov/NetCoMi/nix-flakes";
     miaTime-flake.url = "github:artur-sannikov/miaTime/nix-flakes";
     miaViz-flake.url = "github:artur-sannikov/miaViz/nix-flakes";
+    IntegratedLearner-flake.url = "github:artur-sannikov/IntegratedLearner/nix-flakes";
   };
 
   outputs =
@@ -23,6 +24,7 @@
       NetCoMi-flake,
       miaTime-flake,
       miaViz-flake,
+      IntegratedLearner-flake,
       ...
     }:
     flake-utils.lib.eachDefaultSystem (
@@ -44,6 +46,7 @@
         NetCoMi = NetCoMi-flake.packages.${system}.default;
         miaTime = miaTime-flake.packages.${system}.default;
         miaViz = miaViz-flake.packages.${system}.default;
+        IntegratedLearner = IntegratedLearner-flake.packages.${system}.default;
         OMA = pkgs.rPackages.buildRPackage {
           name = "OMA";
           src = self;
@@ -107,7 +110,6 @@
                 rgl
                 ROCR
                 scales
-                scater
                 sechm
                 sessioninfo
                 shadowtext
@@ -126,6 +128,7 @@
               NetCoMi
               miaTime
               miaViz
+              IntegratedLearner
             ];
         };
         R = with pkgs; [
@@ -145,7 +148,6 @@
             ;
         };
       in
-
       {
         devShells.default = pkgs.mkShell {
           LOCALE_ARCHIVE =
