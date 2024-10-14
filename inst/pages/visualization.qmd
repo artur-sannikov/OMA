@@ -680,13 +680,13 @@ multi-assay analyses. These are discussed further in chapters
 
 ```{r}
 # Load libraries
-library(rgl)
+# library(rgl)
 library(plotly)
 ```
 
 ```{r setup2}
 library(knitr)
-knitr::knit_hooks$set(webgl = hook_webgl)
+# knitr::knit_hooks$set(webgl = hook_webgl)
 ```
 
 In this section we make a 3D version of the earlier PCoA plot
