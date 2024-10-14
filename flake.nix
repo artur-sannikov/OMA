@@ -132,7 +132,16 @@
             ];
           })
         ];
+        system_packages = builtins.attrValues {
+          inherit (pkgs)
+            quarto
+            R
+            glibcLocales
+            nix
+            ;
+        };
       in
+
       {
         devShells.default = pkgs.mkShell {
           LOCALE_ARCHIVE =
@@ -145,6 +154,7 @@
           LC_MEASUREMENT = "en_US.UTF-8";
           buildInputs = [
             R
+            system_packages
           ];
         };
       }
