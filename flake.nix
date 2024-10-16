@@ -2,10 +2,14 @@
   description = "Nix Flake for Orchestrating Microbiome Analysis book";
 
   inputs = {
-    nixpkgs.url = "github:rstats-on-nix/nixpkgs/a4e033f90ce58031f324432b8bf0ca3b4bcf155c";
+    # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # nixpkgs.url = "github:rstats-on-nix/nixpkgs/master";
+    # bioconductor-nixpkgs.inputs.nixpkgs.follows = "nixpkgs";
+    nixpkgs.url = "github:rstats-on-nix/nixpkgs/b1747d3e8d1533318f627a32327fb5602be58039";
     flake-utils.url = "github:numtide/flake-utils";
-    mia-flake.url = "github:artur-sannikov/mia/nix-flakes";
+    # mia-flake.url = "github:artur-sannikov/mia/nix-flakes";
     SpiecEasi-flake.url = "github:artur-sannikov/SpiecEasi/nix-flakes";
+    # SpiecEasi-flake.inputs.nixpkgs.follows = "nixpkgs";
     SPRING-flake.url = "github:artur-sannikov/SPRING/nix-flakes";
     NetCoMi-flake.url = "github:artur-sannikov/NetCoMi/nix-flakes";
     miaTime-flake.url = "github:artur-sannikov/miaTime/nix-flakes";
@@ -17,35 +21,39 @@
     {
       self,
       nixpkgs,
+      # bioconductor-nixpkgs,
       flake-utils,
-      mia-flake,
+      # mia-flake,
       SpiecEasi-flake,
       SPRING-flake,
       NetCoMi-flake,
       miaTime-flake,
-      miaViz-flake,
+      # # miaViz-flake,
       IntegratedLearner-flake,
       ...
     }:
     flake-utils.lib.eachDefaultSystem (
       system:
       let
-        overlays = [
-          (final: prev: {
-            rPackages = prev.rPackages // {
-              # Force mia to be the bleeding-edge version
-              mia = mia-flake.packages.${system}.default;
-            };
-          })
-        ];
+        # overlays = [
+        #   (final: prev: {
+        #     rPackages = prev.rPackages // {
+        #       # Force mia to be the bleeding-edge version
+        #       mia = mia-flake.packages.${system}.default;
+        #     };
+        #   })
+        # ];
         pkgs = import nixpkgs {
-          inherit system overlays;
+          inherit system;
         };
+        # bioconductor-pkgs = import bioconductor-nixpkgs {
+        #   inherit system;
+        # };
         SpiecEasi = SpiecEasi-flake.packages.${system}.default;
         SPRING = SPRING-flake.packages.${system}.default;
         NetCoMi = NetCoMi-flake.packages.${system}.default;
         miaTime = miaTime-flake.packages.${system}.default;
-        miaViz = miaViz-flake.packages.${system}.default;
+        # miaViz = miaViz-flake.packages.${system}.default;
         IntegratedLearner = IntegratedLearner-flake.packages.${system}.default;
         OMA = pkgs.rPackages.buildRPackage {
           name = "OMA";
@@ -89,6 +97,9 @@
                 kableExtra
                 knitr
                 Maaslin2
+                mia
+                # miaTime
+                miaViz
                 microbiome
                 microbiomeDataSets
                 MicrobiomeStat
@@ -127,24 +138,25 @@
               SPRING
               NetCoMi
               miaTime
-              miaViz
+              # miaViz
               IntegratedLearner
             ];
         };
         R = with pkgs; [
           (rWrapper.override {
             packages = [
-              rPackages.mia
+              # rPackages.mia
               OMA
             ];
           })
         ];
         system_packages = builtins.attrValues {
           inherit (pkgs)
-            quarto
+            # quarto
             R
             glibcLocales
             nix
+            # deno
             ;
         };
       in
