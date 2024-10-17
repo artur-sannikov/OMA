@@ -4,8 +4,9 @@
   inputs = {
     # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     # nixpkgs.url = "github:rstats-on-nix/nixpkgs/master";
+    nixpkgs.url = "github:rstats-on-nix/nixpkgs/r-bioc-devel";
     # bioconductor-nixpkgs.inputs.nixpkgs.follows = "nixpkgs";
-    nixpkgs.url = "github:rstats-on-nix/nixpkgs/b1747d3e8d1533318f627a32327fb5602be58039";
+    # nixpkgs.url = "github:rstats-on-nix/nixpkgs/b1747d3e8d1533318f627a32327fb5602be58039";
     flake-utils.url = "github:numtide/flake-utils";
     # mia-flake.url = "github:artur-sannikov/mia/nix-flakes";
     SpiecEasi-flake.url = "github:artur-sannikov/SpiecEasi/nix-flakes";
