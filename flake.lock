@@ -416,11 +416,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1726568799,
-        "narHash": "sha256-hc7/eB3N1lexCQOYlnQ5jkljtT7+EGUb93EBg3B2kIs=",
+        "lastModified": 1729253358,
+        "narHash": "sha256-d8P/KNAyCG/ffHs99Okc1c+0feQFzoJEq8j7zJA5ljU=",
         "owner": "artur-sannikov",
         "repo": "miaTime",
-        "rev": "99d4831265ab5b1d07330e6b4ecdcf1c17dc6529",
+        "rev": "2ce720f7d0b747063ba64de5a3a9b3469e25d74a",
         "type": "github"
       },
       "original": {
