@@ -4,7 +4,6 @@
   inputs = {
     nixpkgs.url = "github:rstats-on-nix/nixpkgs/51f769d97829f3bc233d21094d8acbbfce0f6d0f"; # Bioconductor devel
     flake-utils.url = "github:numtide/flake-utils";
-    flake-utils.inputs.nixpkgs.follows = "nixpkgs";
 
     SpiecEasi-flake.url = "github:artur-sannikov/SpiecEasi/nix-flakes";
     SpiecEasi-flake.inputs.nixpkgs.follows = "nixpkgs";
