@@ -391,7 +391,7 @@
     "mia-flake": {
       "inputs": {
         "flake-utils": "flake-utils_12",
-        "nixpkgs": "nixpkgs_5"
+        "nixpkgs": "nixpkgs_6"
       },
       "locked": {
         "lastModified": 1728561013,
@@ -411,9 +411,7 @@
     "miaTime-flake": {
       "inputs": {
         "flake-utils": "flake-utils_10",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
+        "nixpkgs": "nixpkgs_5"
       },
       "locked": {
         "lastModified": 1729253358,
@@ -519,6 +517,22 @@
     },
     "nixpkgs_5": {
       "locked": {
+        "lastModified": 1729211146,
+        "narHash": "sha256-G3Lp6fjiKTlmCwGncKlhpX0tLqXyAZ6+rHKbtbNJEgQ=",
+        "owner": "rstats-on-nix",
+        "repo": "nixpkgs",
+        "rev": "51f769d97829f3bc233d21094d8acbbfce0f6d0f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rstats-on-nix",
+        "repo": "nixpkgs",
+        "rev": "51f769d97829f3bc233d21094d8acbbfce0f6d0f",
+        "type": "github"
+      }
+    },
+    "nixpkgs_6": {
+      "locked": {
         "lastModified": 1728538411,
         "narHash": "sha256-f0SBJz1eZ2yOuKUr5CA9BHULGXVSn6miBuUWdTyhUhU=",
         "owner": "NixOS",
@@ -533,7 +547,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_6": {
+    "nixpkgs_7": {
       "locked": {
         "lastModified": 1729211146,
         "narHash": "sha256-G3Lp6fjiKTlmCwGncKlhpX0tLqXyAZ6+rHKbtbNJEgQ=",
@@ -558,7 +572,7 @@
         "flake-utils": "flake-utils_9",
         "miaTime-flake": "miaTime-flake",
         "miaViz-flake": "miaViz-flake",
-        "nixpkgs": "nixpkgs_6"
+        "nixpkgs": "nixpkgs_7"
       }
     },
     "systems": {

@@ -15,7 +15,7 @@
     NetCoMi-flake.inputs.nixpkgs.follows = "nixpkgs";
 
     miaTime-flake.url = "github:artur-sannikov/miaTime/nix-flakes";
-    miaTime-flake.inputs.nixpkgs.follows = "nixpkgs";
+    # miaTime-flake.inputs.nixpkgs.follows = "nixpkgs";
 
     miaViz-flake.url = "github:artur-sannikov/miaViz/nix-flakes";
     miaViz-flake.inputs.nixpkgs.follows = "nixpkgs";
