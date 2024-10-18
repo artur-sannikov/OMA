@@ -4,13 +4,27 @@
   inputs = {
     nixpkgs.url = "github:rstats-on-nix/nixpkgs/c562c4b2c14d9c5b624ea28fe3bf23f54f659094";
     flake-utils.url = "github:numtide/flake-utils";
+
     mia-flake.url = "github:artur-sannikov/mia/nix-flakes";
+    mia-flake.inputs.nixpkgs.follows = "nixpkgs";
+
     SpiecEasi-flake.url = "github:artur-sannikov/SpiecEasi/nix-flakes";
+    SpiecEasi-flake.inputs.nixpkgs.follows = "nixpkgs";
+
     SPRING-flake.url = "github:artur-sannikov/SPRING/nix-flakes";
+    SPRING-flake.inputs.nixpkgs.follows = "nixpkgs";
+
     NetCoMi-flake.url = "github:artur-sannikov/NetCoMi/nix-flakes";
+    NetCoMi-flake.inputs.nixpkgs.follows = "nixpkgs";
+
     miaTime-flake.url = "github:artur-sannikov/miaTime/nix-flakes";
+    miaTime-flake.inputs.nixpkgs.follows = "nixpkgs";
+
     miaViz-flake.url = "github:artur-sannikov/miaViz/nix-flakes";
+    miaViz-flake.inputs.nixpkgs.follows = "nixpkgs";
+
     IntegratedLearner-flake.url = "github:artur-sannikov/IntegratedLearner/nix-flakes";
+    IntegratedLearner-flake.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
