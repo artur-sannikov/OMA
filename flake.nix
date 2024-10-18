@@ -2,7 +2,7 @@
   description = "Nix Flake for Orchestrating Microbiome Analysis book";
 
   inputs = {
-    nixpkgs.url = "github:rstats-on-nix/nixpkgs/a4e033f90ce58031f324432b8bf0ca3b4bcf155c";
+    nixpkgs.url = "github:rstats-on-nix/nixpkgs/c562c4b2c14d9c5b624ea28fe3bf23f54f659094";
     flake-utils.url = "github:numtide/flake-utils";
     mia-flake.url = "github:artur-sannikov/mia/nix-flakes";
     SpiecEasi-flake.url = "github:artur-sannikov/SpiecEasi/nix-flakes";
