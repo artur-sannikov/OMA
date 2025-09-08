@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.42">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>13&nbsp; Alpha Diversity – Orchestrating Microbiome Analysis</title>
+<title>14&nbsp; Alpha diversity – Orchestrating Microbiome Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -80,7 +80,7 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../pages/beta_diversity.html" rel="next">
+<link href="../pages/community_similarity.html" rel="next">
 <link href="../pages/composition.html" rel="prev">
 <link href="../assets/favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
@@ -88,12 +88,12 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2fa0555fe88427c29efa1b60aaf9e62d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-6d7e7b9b3dbd114c66b233ded7072392.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-e9b1f05d37f4fab6e8a1aa1b10d398e4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-ef517e6d634b33e32ea14de8514fe376.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -118,32 +118,7 @@ div.csl-indent {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
+}</script>
 </head>
 <body class="nav-sidebar docked nav-fixed slimcontent">
 
@@ -193,7 +168,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../pages/alpha_diversity.html">Diversity &amp; similarity</a></li><li class="breadcrumb-item"><a href="../pages/alpha_diversity.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Alpha Diversity</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../pages/composition.html">Diversity &amp; similarity</a></li><li class="breadcrumb-item"><a href="../pages/alpha_diversity.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Alpha diversity</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -288,30 +263,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data wrangling</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../pages/subsetting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Subsetting</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../pages/agglomeration.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Agglomeration</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../pages/transformation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Transformation</span></span></a>
-  </div>
-</li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
- <span class="menu-text">Exploration &amp; QC</span></a>
+ <span class="menu-text">QC &amp; preprocessing</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -319,14 +276,32 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../pages/quality_control.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Exploration &amp; quality control</span></span></a>
+  <a href="../pages/preprocess.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">QC &amp; preprocessing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../pages/composition.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Community composition</span></span></a>
+  <a href="../pages/quality_control.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Exploration &amp; quality control</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/subsetting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Subsetting</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/agglomeration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Agglomeration</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/transformation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Transformation</span></span></a>
   </div>
 </li>
       </ul>
@@ -342,20 +317,26 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../pages/alpha_diversity.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Alpha Diversity</span></span></a>
+  <a href="../pages/composition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Community composition</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../pages/beta_diversity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Community similarity</span></span></a>
+  <a href="../pages/alpha_diversity.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Alpha diversity</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/community_similarity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Community similarity</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../pages/clustering.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Community typing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Community typing</span></span></a>
   </div>
 </li>
       </ul>
@@ -372,19 +353,19 @@ window.Quarto = {
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../pages/differential_abundance.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Differential abundance</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Differential abundance</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../pages/correlation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../pages/mediation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Mediation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Mediation</span></span></a>
   </div>
 </li>
       </ul>
@@ -401,13 +382,13 @@ window.Quarto = {
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../pages/network_learning.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Network learning &amp; analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Network learning &amp; analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../pages/network_comparison.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Network comparison</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Network comparison</span></span></a>
   </div>
 </li>
       </ul>
@@ -423,20 +404,26 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../pages/multiomics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Multi-omics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../pages/cross_correlation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Cross-association</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Cross-association</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../pages/multiassay_ordination.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Ordination-based multiassay analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Ordination-based multiassay analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../pages/integrated_learner.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Multi-omics prediction and classification</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Multi-omics prediction and classification</span></span></a>
   </div>
 </li>
       </ul>
@@ -453,13 +440,7 @@ window.Quarto = {
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../pages/machine_learning.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Machine learning</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../pages/statistical_modeling.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Statistical modeling</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Machine learning</span></span></a>
   </div>
 </li>
       </ul>
@@ -467,7 +448,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
- <span class="menu-text">Workflows</span></a>
+ <span class="menu-text">Training</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -475,20 +456,14 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../pages/introductory_workflow.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Introductory</span></span></a>
+  <a href="../pages/training.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Training</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../pages/introductory_workflow_french_version.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Introductory (French)</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../pages/introductory_workflow_dutch_version.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Introductory (Dutch)</span></span></a>
+  <a href="../pages/exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Exercises</span></span></a>
   </div>
 </li>
       </ul>
@@ -496,7 +471,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
- <span class="menu-text">Training</span></a>
+ <span class="menu-text">Support &amp; resources</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -504,14 +479,20 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../pages/training.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Training</span></span></a>
+  <a href="../pages/support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Support</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../pages/exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Exercises</span></span></a>
+  <a href="../pages/resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Resources</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/contributions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Contributions</span></span></a>
   </div>
 </li>
       </ul>
@@ -519,41 +500,12 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false">
- <span class="menu-text">Support &amp; resources</span></a>
+ <span class="menu-text">Appendices</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../pages/support.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Support</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../pages/resources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Resources</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../pages/acknowledgments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Contributions</span></span></a>
-  </div>
-</li>
-      </ul>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
- <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../pages/msea.html" class="sidebar-item-text sidebar-link">
@@ -568,14 +520,14 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../pages/extra_material.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Extra material</span></span></a>
+  <a href="../pages/phyloseq_cheatsheet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">phyloseq vs TreeSE cheatsheet</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../pages/visualization.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Visualization</span></span></a>
+  <a href="../pages/example_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Example solutions for exercises</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -595,26 +547,26 @@ window.Quarto = {
    
   <ul>
 <li>
-<a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background"><span class="header-section-number">13.1</span> Background</a>
+<a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background"><span class="header-section-number">14.1</span> Background</a>
   <ul class="collapse">
-<li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="header-section-number">13.1.1</span> Applications</a></li>
-  <li><a href="#approaches" id="toc-approaches" class="nav-link" data-scroll-target="#approaches"><span class="header-section-number">13.1.2</span> Approaches</a></li>
+<li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="header-section-number">14.1.1</span> Applications</a></li>
+  <li><a href="#approaches" id="toc-approaches" class="nav-link" data-scroll-target="#approaches"><span class="header-section-number">14.1.2</span> Approaches</a></li>
   </ul>
 </li>
   <li>
-<a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">13.2</span> Examples</a>
+<a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">14.2</span> Examples</a>
   <ul class="collapse">
-<li><a href="#sec-estimate-diversity" id="toc-sec-estimate-diversity" class="nav-link" data-scroll-target="#sec-estimate-diversity"><span class="header-section-number">13.2.1</span> Calculate alpha diversity measures</a></li>
-  <li><a href="#sec-plot-diversity" id="toc-sec-plot-diversity" class="nav-link" data-scroll-target="#sec-plot-diversity"><span class="header-section-number">13.2.2</span> Visualize alpha diversity measures</a></li>
-  <li><a href="#sec-stats-diversity" id="toc-sec-stats-diversity" class="nav-link" data-scroll-target="#sec-stats-diversity"><span class="header-section-number">13.2.3</span> Statistical analysis of alpha diversity measures</a></li>
+<li><a href="#sec-estimate-diversity" id="toc-sec-estimate-diversity" class="nav-link" data-scroll-target="#sec-estimate-diversity"><span class="header-section-number">14.2.1</span> Calculate alpha diversity measures</a></li>
+  <li><a href="#sec-plot-diversity" id="toc-sec-plot-diversity" class="nav-link" data-scroll-target="#sec-plot-diversity"><span class="header-section-number">14.2.2</span> Visualize alpha diversity measures</a></li>
+  <li><a href="#sec-stats-diversity" id="toc-sec-stats-diversity" class="nav-link" data-scroll-target="#sec-stats-diversity"><span class="header-section-number">14.2.3</span> Statistical analysis of alpha diversity measures</a></li>
   </ul>
 </li>
-  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading"><span class="header-section-number">13.3</span> Further reading</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading"><span class="header-section-number">14.3</span> Further reading</a></li>
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../pages/alpha_diversity.html">Diversity &amp; similarity</a></li><li class="breadcrumb-item"><a href="../pages/alpha_diversity.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Alpha Diversity</span></a></li></ol></nav><div class="quarto-title">
-<h1 class="title"><span id="sec-alpha-diversity" class="quarto-section-identifier"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Alpha Diversity</span></span></h1>
+<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../pages/composition.html">Diversity &amp; similarity</a></li><li class="breadcrumb-item"><a href="../pages/alpha_diversity.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Alpha diversity</span></a></li></ol></nav><div class="quarto-title">
+<h1 class="title"><span id="sec-alpha-diversity" class="quarto-section-identifier"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Alpha diversity</span></span></h1>
 </div>
 
 
@@ -662,15 +614,15 @@ document.addEventListener("click", function (event) {
 }
 </style>
 </div>
-<section id="background" class="level2 page-columns page-full" data-number="13.1"><h2 data-number="13.1" class="anchored" data-anchor-id="background">
-<span class="header-section-number">13.1</span> Background</h2>
-<p>Alpha diversity, or within-sample diversity, is a central concept in microbiome research. In ecological literature, several distinct but related alpha diversity indices, often referring to <strong>richness</strong> and <strong>evenness</strong> - the number of taxa and how they are distributed, respectively - are commonly used <span class="citation" data-cites="Willis2019 Whittaker1960">(<a href="#ref-Willis2019" role="doc-biblioref">Willis 2019</a>; <a href="#ref-Whittaker1960" role="doc-biblioref">Whittaker 1960</a>)</span>. The term <strong>diversity</strong> can be used to collectively refer to all these indices.</p>
+<section id="background" class="level2 page-columns page-full" data-number="14.1"><h2 data-number="14.1" class="anchored" data-anchor-id="background">
+<span class="header-section-number">14.1</span> Background</h2>
+<p>Alpha diversity, or within-sample diversity, is a central concept in microbiome research. In ecological literature, several distinct but related alpha diversity indices, often referring to <strong>richness</strong> and <strong>evenness</strong> - the number of taxonomic features and how they are distributed, respectively - are commonly used <span class="citation" data-cites="Willis2019 Whittaker1960">(<a href="#ref-Willis2019" role="doc-biblioref">Willis 2019</a>; <a href="#ref-Whittaker1960" role="doc-biblioref">Whittaker 1960</a>)</span>. The term <strong>diversity</strong> can be used to collectively refer to all these indices.</p>
 <div class="no-row-height column-margin column-container"><div id="ref-Willis2019" class="csl-entry" role="listitem">
 Willis, Amy D. 2019. <span>“Rarefaction, Alpha Diversity, and Statistics.”</span> <em>Frontiers in Microbiology</em> 10. <a href="https://doi.org/10.3389/fmicb.2019.02407">https://doi.org/10.3389/fmicb.2019.02407</a>.
 </div><div id="ref-Whittaker1960" class="csl-entry" role="listitem">
 Whittaker, R. H. 1960. <span>“Vegetation of the Siskiyou Mountains, Oregon and California.”</span> <em>Ecological Monographs</em> 30 (3): 279–338. https://doi.org/<a href="https://doi.org/10.2307/1943563">https://doi.org/10.2307/1943563</a>.
-</div></div><section id="applications" class="level3 page-columns page-full" data-number="13.1.1"><h3 data-number="13.1.1" class="anchored" data-anchor-id="applications">
-<span class="header-section-number">13.1.1</span> Applications</h3>
+</div></div><section id="applications" class="level3 page-columns page-full" data-number="14.1.1"><h3 data-number="14.1.1" class="anchored" data-anchor-id="applications">
+<span class="header-section-number">14.1.1</span> Applications</h3>
 <p>Alpha diversity is predominantly used to quantify complexity in the microbiome. In the general adult population, lower alpha diversity and lower bacterial load have been associated to worse overall physical and mental health <span class="citation" data-cites="Valles-Colomer2019GBMs vandeputte2017quantitative">(<a href="#ref-Valles-Colomer2019GBMs" role="doc-biblioref">Valles-Colomer et al. 2019</a>; <a href="#ref-vandeputte2017quantitative" role="doc-biblioref">Vandeputte et al. 2017</a>)</span>. However, this principle may not generalize to other populations, most notably in early life and in patient cohorts <span class="citation" data-cites="Ma2019">(<a href="#ref-Ma2019" role="doc-biblioref">Ma, Li, and Gotelli 2019</a>)</span>.</p>
 <div class="no-row-height column-margin column-container"><div id="ref-Valles-Colomer2019GBMs" class="csl-entry" role="listitem">
 Valles-Colomer, Mireia, Gwen Falony, Youssef Darzi, Ettje F. Tigchelaar, Jun Wang, Raul Y. Tito, Carmen Schiweck, et al. 2019. <span>“The Neuroactive Potential of the Human Gut Microbiota in Quality of Life and Depression.”</span> Journal Article. <em><span>Nature Microbiology</span></em>. <a href="https://doi.org/10.1038/s41564-018-0337-x">https://doi.org/10.1038/s41564-018-0337-x</a>.
@@ -678,9 +630,9 @@ Valles-Colomer, Mireia, Gwen Falony, Youssef Darzi, Ettje F. Tigchelaar, Jun Wan
 Vandeputte, Doris, Gunter Kathagen, Kevin D’hoe, Sara Vieira-Silva, Mireia Valles-Colomer, João Sabino, Jun Wang, et al. 2017. <span>“Quantitative Microbiome Profiling Links Gut Community Variation to Microbial Load.”</span> <em><span>Nature</span></em> 551 (7681): 507–11.
 </div><div id="ref-Ma2019" class="csl-entry" role="listitem">
 Ma, Zhanshan (Sam), Lianwei Li, and Nicholas J Gotelli. 2019. <span>“Diversity-Disease Relationships and Shared Species Analyses for Human Microbiome-Associated Diseases.”</span> <em><span>The ISME Journal</span></em> 13 (8): 1911–19. <a href="https://doi.org/10.1038/s41396-019-0395-y">https://doi.org/10.1038/s41396-019-0395-y</a>.
-</div></div></section><section id="approaches" class="level3 page-columns page-full" data-number="13.1.2"><h3 data-number="13.1.2" class="anchored" data-anchor-id="approaches">
-<span class="header-section-number">13.1.2</span> Approaches</h3>
-<p>The majority of alpha diversity metrics are closely related, though this is not evident from their names. Bastiaanssen et al. <span class="citation" data-cites="bastiaanssen2023bugs1">(<a href="#ref-bastiaanssen2023bugs1" role="doc-biblioref">2023</a>)</span> lay out this relationship across two factors (See table below); First, alpha diversity metrics can be defined as special cases of a unifying equation of <strong>diversity</strong>, where the <strong>Hill number</strong> determines the specific index captured. Lower Hill numbers favour <strong>richness</strong>, the number of distinct taxa, whereas higher numbers favour <strong>evenness</strong>, how the taxa are distributed over the sample <span class="citation" data-cites="Hill1973">(<a href="#ref-Hill1973" role="doc-biblioref">Hill 1973</a>)</span>. Second, some alpha diversity metrics are weighed based on phylogeny, like Faith’s PD <span class="citation" data-cites="Faith1992">(<a href="#ref-Faith1992" role="doc-biblioref">1992</a>)</span> and PhILR <span class="citation" data-cites="Silverman2017">(<a href="#ref-Silverman2017" role="doc-biblioref">Silverman et al. 2017</a>)</span>.</p>
+</div></div></section><section id="approaches" class="level3 page-columns page-full" data-number="14.1.2"><h3 data-number="14.1.2" class="anchored" data-anchor-id="approaches">
+<span class="header-section-number">14.1.2</span> Approaches</h3>
+<p>The majority of alpha diversity metrics are closely related, though this is not evident from their names. Bastiaanssen et al. <span class="citation" data-cites="bastiaanssen2023bugs1">(<a href="#ref-bastiaanssen2023bugs1" role="doc-biblioref">2023</a>)</span> lay out this relationship across two factors (See table below); First, alpha diversity metrics can be defined as special cases of a unifying equation of <strong>diversity</strong>, where the <strong>Hill number</strong> determines the specific index captured. Lower Hill numbers favour <strong>richness</strong>, the number of distinct taxonomic features, whereas higher numbers favour <strong>evenness</strong>, how the taxonomic features are distributed over the sample <span class="citation" data-cites="Hill1973">(<a href="#ref-Hill1973" role="doc-biblioref">Hill 1973</a>)</span>. Second, some alpha diversity metrics are weighed based on phylogeny, like Faith’s PD <span class="citation" data-cites="Faith1992">(<a href="#ref-Faith1992" role="doc-biblioref">1992</a>)</span> and PhILR <span class="citation" data-cites="Silverman2017">(<a href="#ref-Silverman2017" role="doc-biblioref">Silverman et al. 2017</a>)</span>.</p>
 <div class="no-row-height column-margin column-container"><div id="ref-bastiaanssen2023bugs1" class="csl-entry" role="listitem">
 Bastiaanssen, Thomaz FS, Thomas P Quinn, and Amy Loughman. 2023. <span>“Bugs as Features (Part 1): Concepts and Foundations for the Compositional Data Analysis of the Microbiome–Gut–Brain Axis.”</span> <em><span>Nature Mental Health</span></em> 1 (12): 930–38. <a href="https://doi.org/10.1038/s44220-023-00148-3">https://doi.org/10.1038/s44220-023-00148-3</a>.
 </div><div id="ref-Hill1973" class="csl-entry" role="listitem">
@@ -691,23 +643,23 @@ Faith, D. P. 1992. <span>“Conservation Evaluation and Phylogenetic Diversity.�
 Silverman, Justin D, Alex D Washburne, Sayan Mukherjee, and Lawrence A David. 2017. <span>“A Phylogenetic Transform Enhances Analysis of Compositional Microbiota Data.”</span> <em>eLife</em> 6. <a href="https://doi.org/10.7554/eLife.21887">https://doi.org/10.7554/eLife.21887</a>.
 </div></div><div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="opqwukqekj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#opqwukqekj table {
+<div id="xevsyfmszp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#xevsyfmszp table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#opqwukqekj thead, #opqwukqekj tbody, #opqwukqekj tfoot, #opqwukqekj tr, #opqwukqekj td, #opqwukqekj th {
+#xevsyfmszp thead, #xevsyfmszp tbody, #xevsyfmszp tfoot, #xevsyfmszp tr, #xevsyfmszp td, #xevsyfmszp th {
   border-style: none;
 }
 
-#opqwukqekj p {
+#xevsyfmszp p {
   margin: 0;
   padding: 0;
 }
 
-#opqwukqekj .gt_table {
+#xevsyfmszp .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -733,12 +685,12 @@ Silverman, Justin D, Alex D Washburne, Sayan Mukherjee, and Lawrence A David. 20
   border-left-color: #D3D3D3;
 }
 
-#opqwukqekj .gt_caption {
+#xevsyfmszp .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#opqwukqekj .gt_title {
+#xevsyfmszp .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -750,7 +702,7 @@ Silverman, Justin D, Alex D Washburne, Sayan Mukherjee, and Lawrence A David. 20
   border-bottom-width: 0;
 }
 
-#opqwukqekj .gt_subtitle {
+#xevsyfmszp .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -762,7 +714,7 @@ Silverman, Justin D, Alex D Washburne, Sayan Mukherjee, and Lawrence A David. 20
   border-top-width: 0;
 }
 
-#opqwukqekj .gt_heading {
+#xevsyfmszp .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -774,13 +726,13 @@ Silverman, Justin D, Alex D Washburne, Sayan Mukherjee, and Lawrence A David. 20
   border-right-color: #D3D3D3;
 }
 
-#opqwukqekj .gt_bottom_border {
+#xevsyfmszp .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#opqwukqekj .gt_col_headings {
+#xevsyfmszp .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -795,7 +747,7 @@ Silverman, Justin D, Alex D Washburne, Sayan Mukherjee, and Lawrence A David. 20
   border-right-color: #D3D3D3;
 }
 
-#opqwukqekj .gt_col_heading {
+#xevsyfmszp .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -815,7 +767,7 @@ Silverman, Justin D, Alex D Washburne, Sayan Mukherjee, and Lawrence A David. 20
   overflow-x: hidden;
 }
 
-#opqwukqekj .gt_column_spanner_outer {
+#xevsyfmszp .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -827,15 +779,15 @@ Silverman, Justin D, Alex D Washburne, Sayan Mukherjee, and Lawrence A David. 20
   padding-right: 4px;
 }
 
-#opqwukqekj .gt_column_spanner_outer:first-child {
+#xevsyfmszp .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#opqwukqekj .gt_column_spanner_outer:last-child {
+#xevsyfmszp .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#opqwukqekj .gt_column_spanner {
+#xevsyfmszp .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -847,11 +799,11 @@ Silverman, Justin D, Alex D Washburne, Sayan Mukherjee, and Lawrence A David. 20
   width: 100%;
 }
 
-#opqwukqekj .gt_spanner_row {
+#xevsyfmszp .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#opqwukqekj .gt_group_heading {
+#xevsyfmszp .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -877,7 +829,7 @@ Silverman, Justin D, Alex D Washburne, Sayan Mukherjee, and Lawrence A David. 20
   text-align: left;
 }
 
-#opqwukqekj .gt_empty_group_heading {
+#xevsyfmszp .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -892,15 +844,15 @@ Silverman, Justin D, Alex D Washburne, Sayan Mukherjee, and Lawrence A David. 20
   vertical-align: middle;
 }
 
-#opqwukqekj .gt_from_md > :first-child {
+#xevsyfmszp .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#opqwukqekj .gt_from_md > :last-child {
+#xevsyfmszp .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#opqwukqekj .gt_row {
+#xevsyfmszp .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -919,7 +871,7 @@ Silverman, Justin D, Alex D Washburne, Sayan Mukherjee, and Lawrence A David. 20
   overflow-x: hidden;
 }
 
-#opqwukqekj .gt_stub {
+#xevsyfmszp .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -932,7 +884,7 @@ Silverman, Justin D, Alex D Washburne, Sayan Mukherjee, and Lawrence A David. 20
   padding-right: 5px;
 }
 
-#opqwukqekj .gt_stub_row_group {
+#xevsyfmszp .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -946,15 +898,15 @@ Silverman, Justin D, Alex D Washburne, Sayan Mukherjee, and Lawrence A David. 20
   vertical-align: top;
 }
 
-#opqwukqekj .gt_row_group_first td {
+#xevsyfmszp .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#opqwukqekj .gt_row_group_first th {
+#xevsyfmszp .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#opqwukqekj .gt_summary_row {
+#xevsyfmszp .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -964,16 +916,16 @@ Silverman, Justin D, Alex D Washburne, Sayan Mukherjee, and Lawrence A David. 20
   padding-right: 5px;
 }
 
-#opqwukqekj .gt_first_summary_row {
+#xevsyfmszp .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#opqwukqekj .gt_first_summary_row.thick {
+#xevsyfmszp .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#opqwukqekj .gt_last_summary_row {
+#xevsyfmszp .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -983,7 +935,7 @@ Silverman, Justin D, Alex D Washburne, Sayan Mukherjee, and Lawrence A David. 20
   border-bottom-color: #D3D3D3;
 }
 
-#opqwukqekj .gt_grand_summary_row {
+#xevsyfmszp .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -993,7 +945,7 @@ Silverman, Justin D, Alex D Washburne, Sayan Mukherjee, and Lawrence A David. 20
   padding-right: 5px;
 }
 
-#opqwukqekj .gt_first_grand_summary_row {
+#xevsyfmszp .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1003,7 +955,7 @@ Silverman, Justin D, Alex D Washburne, Sayan Mukherjee, and Lawrence A David. 20
   border-top-color: #D3D3D3;
 }
 
-#opqwukqekj .gt_last_grand_summary_row_top {
+#xevsyfmszp .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1013,11 +965,11 @@ Silverman, Justin D, Alex D Washburne, Sayan Mukherjee, and Lawrence A David. 20
   border-bottom-color: #D3D3D3;
 }
 
-#opqwukqekj .gt_striped {
+#xevsyfmszp .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#opqwukqekj .gt_table_body {
+#xevsyfmszp .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1026,7 +978,7 @@ Silverman, Justin D, Alex D Washburne, Sayan Mukherjee, and Lawrence A David. 20
   border-bottom-color: #D3D3D3;
 }
 
-#opqwukqekj .gt_footnotes {
+#xevsyfmszp .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: solid;
@@ -1040,7 +992,7 @@ Silverman, Justin D, Alex D Washburne, Sayan Mukherjee, and Lawrence A David. 20
   border-right-color: #D3D3D3;
 }
 
-#opqwukqekj .gt_footnote {
+#xevsyfmszp .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1049,7 +1001,7 @@ Silverman, Justin D, Alex D Washburne, Sayan Mukherjee, and Lawrence A David. 20
   padding-right: 5px;
 }
 
-#opqwukqekj .gt_sourcenotes {
+#xevsyfmszp .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: solid;
@@ -1063,7 +1015,7 @@ Silverman, Justin D, Alex D Washburne, Sayan Mukherjee, and Lawrence A David. 20
   border-right-color: #D3D3D3;
 }
 
-#opqwukqekj .gt_sourcenote {
+#xevsyfmszp .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1071,72 +1023,72 @@ Silverman, Justin D, Alex D Washburne, Sayan Mukherjee, and Lawrence A David. 20
   padding-right: 5px;
 }
 
-#opqwukqekj .gt_left {
+#xevsyfmszp .gt_left {
   text-align: left;
 }
 
-#opqwukqekj .gt_center {
+#xevsyfmszp .gt_center {
   text-align: center;
 }
 
-#opqwukqekj .gt_right {
+#xevsyfmszp .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#opqwukqekj .gt_font_normal {
+#xevsyfmszp .gt_font_normal {
   font-weight: normal;
 }
 
-#opqwukqekj .gt_font_bold {
+#xevsyfmszp .gt_font_bold {
   font-weight: bold;
 }
 
-#opqwukqekj .gt_font_italic {
+#xevsyfmszp .gt_font_italic {
   font-style: italic;
 }
 
-#opqwukqekj .gt_super {
+#xevsyfmszp .gt_super {
   font-size: 65%;
 }
 
-#opqwukqekj .gt_footnote_marks {
+#xevsyfmszp .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#opqwukqekj .gt_asterisk {
+#xevsyfmszp .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#opqwukqekj .gt_indent_1 {
+#xevsyfmszp .gt_indent_1 {
   text-indent: 5px;
 }
 
-#opqwukqekj .gt_indent_2 {
+#xevsyfmszp .gt_indent_2 {
   text-indent: 10px;
 }
 
-#opqwukqekj .gt_indent_3 {
+#xevsyfmszp .gt_indent_3 {
   text-indent: 15px;
 }
 
-#opqwukqekj .gt_indent_4 {
+#xevsyfmszp .gt_indent_4 {
   text-indent: 20px;
 }
 
-#opqwukqekj .gt_indent_5 {
+#xevsyfmszp .gt_indent_5 {
   text-indent: 25px;
 }
 
-#opqwukqekj .katex-display {
+#xevsyfmszp .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#opqwukqekj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#xevsyfmszp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1148,7 +1100,7 @@ Silverman, Justin D, Alex D Washburne, Sayan Mukherjee, and Lawrence A David. 20
 <col style="width: 22%">
 </colgroup>
 <thead>
-<tr class="header gt_col_headings gt_spanner_row">
+<tr class="gt_col_headings gt_spanner_row header">
 <th rowspan="2" id="a::stub" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
 <th id="**Hill number 0**" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" style="text-align: center; vertical-align: middle;" scope="col"><div class="gt_column_spanner">
 <strong>Hill number 0</strong>
@@ -1160,43 +1112,55 @@ Silverman, Justin D, Alex D Washburne, Sayan Mukherjee, and Lawrence A David. 20
 <strong>Hill number 2</strong>
 </div></th>
 </tr>
-<tr class="odd gt_col_headings">
-<th id="Dependent-on-presence-and-absence-of-taxa,-not-abundance" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="font-style: italic" scope="col">Dependent on presence and absence of taxa, not abundance</th>
-<th id="Dependent-on-how-evenly-taxa-are-distributed-in-a-sample" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="font-style: italic" scope="col">Dependent on how evenly taxa are distributed in a sample</th>
-<th id="The-probability-of-two-randomly-picked-taxa-not-being-the-same" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="font-style: italic" scope="col">The probability of two randomly picked taxa not being the same</th>
+<tr class="gt_col_headings even">
+<th id="Dependent-on-presence-and-absence-of-taxonomic-features,-not-abundance" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="font-style: italic" scope="col">Dependent on presence and absence of taxonomic features, not abundance</th>
+<th id="Dependent-on-how-evenly-taxonomic-features-are-distributed-in-a-sample" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="font-style: italic" scope="col">Dependent on how evenly taxonomic features are distributed in a sample</th>
+<th id="The-probability-of-two-randomly-picked-taxonomic-feature-not-being-the-same" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="font-style: italic" scope="col">The probability of two randomly picked taxonomic feature not being the same</th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
 <tr class="odd">
-<td id="stub_1_1" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row"><span data-qmd-base64="PHN0cm9uZz5OZXV0cmFsIERpdmVyc2l0eTwvc3Ryb25nPjwvcD4KPGhyIC8+CjxwPjxlbT5XZWlnaHMgZWFjaCB0YXhvbiBlcXVhbGx5LCBubyBhc3N1bXB0aW9ucyBhYm91dCBwaHlsb2dlbnk8L2VtPg==">
+<td id="stub_1_1" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row"><span data-qmd-base64="KipOZXV0cmFsIERpdmVyc2l0eSoqICAKCi0tLSAgCipXZWlnaHMgZWFjaCB0YXhvbiBlcXVhbGx5LCBubyBhc3N1bXB0aW9ucyBhYm91dCBwaHlsb2dlbnkq">
 <span class="gt_from_md">
 <strong>Neutral Diversity</strong>
 
 <hr>
 <p><em>Weighs each taxon equally, no assumptions about phylogeny</em></p></span></span></td>
-<td class="gt_row gt_center" headers="stub_1_1 Dependent on presence and absence of taxa, not abundance" style="font-weight: bolder">Richness (Chao1)</td>
-<td class="gt_row gt_center" headers="stub_1_1 Dependent on how evenly taxa are distributed in a sample" style="font-weight: bolder">Shannon Entropy</td>
-<td class="gt_row gt_center" headers="stub_1_1 The probability of two randomly picked taxa not being the same" style="font-weight: bolder">Simpson’s Index</td>
+<td class="gt_row gt_center" headers="stub_1_1 Dependent on presence and absence of taxonomic features, not abundance" style="font-weight: bolder">Richness (Chao1)</td>
+<td class="gt_row gt_center" headers="stub_1_1 Dependent on how evenly taxonomic features are distributed in a sample" style="font-weight: bolder">Shannon Entropy</td>
+<td class="gt_row gt_center" headers="stub_1_1 The probability of two randomly picked taxonomic feature not being the same" style="font-weight: bolder">Simpson’s Index</td>
 </tr>
 <tr class="even">
-<td id="stub_1_2" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row"><span data-qmd-base64="PHN0cm9uZz5QaHlsb2dlbmV0aWMgRGl2ZXJzaXR5PC9zdHJvbmc+PC9wPgo8aHIgLz4KPHA+PGVtPkluZGljZXMgYXJlIHNjYWxlZCBiYXNlZCBvbiB0YXhvbm9taWMgY2xvc2VuZXNzIHdpdGggYSBwaHlsb2dlbmV0aWMgdHJlZTwvZW0+">
+<td id="stub_1_2" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row"><span data-qmd-base64="KipQaHlsb2dlbmV0aWMgRGl2ZXJzaXR5KiogIAoKLS0tICAKKkluZGljZXMgYXJlIHNjYWxlZCBiYXNlZCBvbiB0YXhvbm9taWMgY2xvc2VuZXNzIHdpdGggYSBwaHlsb2dlbmV0aWMgdHJlZSo=">
 <span class="gt_from_md">
 <strong>Phylogenetic Diversity</strong>
 
 <hr>
 <p><em>Indices are scaled based on taxonomic closeness with a phylogenetic tree</em></p></span></span></td>
-<td class="gt_row gt_center" headers="stub_1_2 Dependent on presence and absence of taxa, not abundance" style="font-weight: bolder">Faith’s Phylogenetic Diversity</td>
-<td class="gt_row gt_center" headers="stub_1_2 Dependent on how evenly taxa are distributed in a sample" style="font-weight: bolder">Phylogenetic Entropy</td>
-<td class="gt_row gt_center" headers="stub_1_2 The probability of two randomly picked taxa not being the same" style="font-weight: bolder">Rao’s Quadratic Diversity</td>
+<td class="gt_row gt_center" headers="stub_1_2 Dependent on presence and absence of taxonomic features, not abundance" style="font-weight: bolder">Faith’s Phylogenetic Diversity</td>
+<td class="gt_row gt_center" headers="stub_1_2 Dependent on how evenly taxonomic features are distributed in a sample" style="font-weight: bolder">Phylogenetic Entropy</td>
+<td class="gt_row gt_center" headers="stub_1_2 The probability of two randomly picked taxonomic feature not being the same" style="font-weight: bolder">Rao’s Quadratic Diversity</td>
 </tr>
 </tbody>
-<tfoot class="gt_footnotes"><tr class="even">
-<td colspan="4" class="gt_footnote">The equation for general diversity can be defined as follows: <span class="math inline">\({{}^qD = (\sum_{i=1}^{R}p^q_i})^{\frac{1}{(1-q)}}\)</span>,<br> with <em>q</em> = Hill number, <em>R</em> = number of features, <em>p</em> = relative feature abundance.</td>
+<tfoot class="gt_footnotes"><tr class="odd">
+<td colspan="4" class="gt_footnote">The equation for general diversity can be defined as follows: ${{}^qD = (_{i=1}<sup>{R}p</sup>q_i})^{}$,<br>
+with <em>q</em> = Hill number, <em>R</em> = number of features, <em>p</em> = relative feature abundance.</td>
 </tr></tfoot>
 </table>
 </div>
 </div>
 </div>
+<p>Cassol et al. <span class="citation" data-cites="Cassol2025">(<a href="#ref-Cassol2025" role="doc-biblioref">2025</a>)</span> offer practical guidelines for selecting alpha diversity indices. They classify alpha diversity into four main categories and recommend calculating at least one metric from each category, if possible, to sufficiently capture within-sample diversity. Since indices within the same category tend to be correlated, they suggest using the simplest available metric. Below are the default choices for each category.</p>
+<div class="no-row-height column-margin column-container"></div><ul>
+<li>
+<strong>Richness</strong>: The number of observed unique features</li>
+<li>
+<strong>Dominance</strong>: Berger-Parker</li>
+<li>
+<strong>Information</strong>: Shannon</li>
+<li>
+<strong>Phylogenetics</strong>: Faith</li>
+</ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1216,32 +1180,32 @@ Deng, Yongcui, Alexander K Umbach, and Josh D Neufeld. 2024. <span>“Nonparamet
 A, Chao. 1984. <span>“Non-Parametric Estimation of the Number of Classes in a Population.”</span> <em>Scandinavian Journal of Statistics</em> 11 (4): 265–70. <a href="https://www.jstor.org/stable/4615964">https://www.jstor.org/stable/4615964</a>.
 </div></div><div class="no-row-height column-margin column-container"><div id="ref-Chao1992" class="csl-entry" role="listitem">
 A, Chao, and Lee SM. 1992. <span>“Estimating the Number of Classes via Sample Coverage.”</span> <em>Journal of the American Statistical Association</em> 87 (417): 210–17. https://doi.org/<a href="https://doi.org/10.1080/01621459.1992.10475194">https://doi.org/10.1080/01621459.1992.10475194</a>.
-</div></div></section></section><section id="examples" class="level2 page-columns page-full" data-number="13.2"><h2 data-number="13.2" class="anchored" data-anchor-id="examples">
-<span class="header-section-number">13.2</span> Examples</h2>
-<section id="sec-estimate-diversity" class="level3 page-columns page-full" data-number="13.2.1"><h3 data-number="13.2.1" class="anchored" data-anchor-id="sec-estimate-diversity">
-<span class="header-section-number">13.2.1</span> Calculate alpha diversity measures</h3>
-<p>Alpha diversity can be estimated with the <code><a href="https://rdrr.io/pkg/mia/man/addAlpha.html">addAlpha()</a></code> function, which interacts with other packages implementing the calculation, such as <code>vegan</code> <span class="citation" data-cites="R_vegan">(<a href="#ref-R_vegan" role="doc-biblioref">Oksanen et al. 2020</a>)</span> and <em><code>picante</code></em> <span class="citation" data-cites="R_picante Kembel2010">(<a href="#ref-R_picante" role="doc-biblioref">Kembel et al. 2010</a>; <a href="#ref-Kembel2010" role="doc-biblioref">W et al. 2010</a>)</span>. These functions calculate the given indices, and add them to the <code>colData</code> slot of the <code>SummarizedExperiment</code> object with the given <code>name</code>.</p>
+</div></div></section></section><section id="examples" class="level2 page-columns page-full" data-number="14.2"><h2 data-number="14.2" class="anchored" data-anchor-id="examples">
+<span class="header-section-number">14.2</span> Examples</h2>
+<section id="sec-estimate-diversity" class="level3 page-columns page-full" data-number="14.2.1"><h3 data-number="14.2.1" class="anchored" data-anchor-id="sec-estimate-diversity">
+<span class="header-section-number">14.2.1</span> Calculate alpha diversity measures</h3>
+<p>Alpha diversity can be estimated with the <code><a href="https://rdrr.io/pkg/mia/man/addAlpha.html">addAlpha()</a></code> function, which includes built-in methods for calculating some indices, while others are computed via integration with the <code>vegan</code> <span class="citation" data-cites="R_vegan">(<a href="#ref-R_vegan" role="doc-biblioref">Oksanen et al. 2020</a>)</span> package. The method calculates the given indices, and add them to the <code>colData</code> slot of the <code>SummarizedExperiment</code> object with the given <code>name</code>.</p>
 <div class="no-row-height column-margin column-container"><div id="ref-R_vegan" class="csl-entry" role="listitem">
 Oksanen, Jari, F. Guillaume Blanchet, Michael Friendly, Roeland Kindt, Pierre Legendre, Dan McGlinn, Peter R. Minchin, et al. 2020. <em>Vegan: Community Ecology Package</em>. <a href="https://CRAN.R-project.org/package=vegan">https://CRAN.R-project.org/package=vegan</a>.
-</div><div id="ref-R_picante" class="csl-entry" role="listitem">
-Kembel, Steven W, Peter D Cowan, Matthew R Helmus, William K Cornwell, Helene Morlon, David D Ackerly, Simon P Blomberg, and Campbell O Webb. 2010. <em>Picante: R Tools for Integrating Phylogenies and Ecology</em>. <a href="https://cran.r-project.org/web/packages/picante">https://cran.r-project.org/web/packages/picante</a>.
-</div><div id="ref-Kembel2010" class="csl-entry" role="listitem">
-W, Kembel Steven, Cowan Peter D, Helmus Matthew R, Cornwell William K, Morlon Helene, Ackerly David D, Blomberg Simon P, and Webb Campbell O. 2010. <span>“<span class="nocase">Picante: R tools for integrating phylogenies and ecology</span>.”</span> <em>Bioinformatics</em> 26 (11): 1463–64. https://doi.org/<a href="https://doi.org/10.1093/bioinformatics/btq166">https://doi.org/10.1093/bioinformatics/btq166</a>.
 </div></div><div class="cell" data-layout-align="center">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># First, let's load some example data.</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/microbiome/mia">mia</a></span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"GlobalPatterns"</span>, package<span class="op">=</span><span class="st">"mia"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"GlobalPatterns"</span><span class="op">)</span></span>
 <span><span class="va">tse</span> <span class="op">&lt;-</span> <span class="va">GlobalPatterns</span></span>
 <span></span>
-<span><span class="co"># Compute one or multiple indices simultaneously through the index 'parameter'. </span></span>
+<span><span class="co"># The 'index' parameter allows computing multiple diversity indices</span></span>
+<span><span class="co"># simultaneously. Without specification, four standard indices are calculated: </span></span>
+<span><span class="co"># dbp_dominance, faith_diversity, observed_richness, and shannon_diversity.</span></span>
 <span><span class="va">tse</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mia/man/addAlpha.html">addAlpha</a></span><span class="op">(</span></span>
-<span>    <span class="va">tse</span>, assay.type <span class="op">=</span> <span class="st">"counts"</span>, index <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"observed"</span>, <span class="st">"shannon"</span>, <span class="st">"faith"</span><span class="op">)</span>,</span>
-<span>    detection <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
+<span>    <span class="va">tse</span>,</span>
+<span>    assay.type <span class="op">=</span> <span class="st">"counts"</span>,</span>
+<span>    detection <span class="op">=</span> <span class="fl">10</span></span>
+<span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Check some of the first values in colData</span></span>
-<span><span class="va">tse</span><span class="op">$</span><span class="va">observed</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">tse</span><span class="op">$</span><span class="va">observed_richness</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">##  [1] 3144 3791 2319  761  671 1004</span></span>
-<span><span class="va">tse</span><span class="op">$</span><span class="va">shannon</span>  <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">tse</span><span class="op">$</span><span class="va">shannon_diversity</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">##  [1] 6.577 6.777 6.498 3.828 3.288 4.289</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Certain indices have additional options, here observed has <code>detection</code> parameter that control the detection threshold. Species over this threshold is considered as detected. See full list of options from from <code><a href="https://rdrr.io/pkg/mia/man/addAlpha.html">help(addAlpha)</a></code>.</p>
@@ -1258,8 +1222,8 @@ Note: Phylogenetic distances require a tree
 <p>Because <code>tse</code> is a <code>TreeSummarizedExperiment</code> object, its phylogenetic tree is used by default. However, the optional argument <code>tree</code> must be provided if <code>tse</code> does not contain a rowTree.</p>
 </div>
 </div>
-</section><section id="sec-plot-diversity" class="level3 page-columns page-full" data-number="13.2.2"><h3 data-number="13.2.2" class="anchored" data-anchor-id="sec-plot-diversity">
-<span class="header-section-number">13.2.2</span> Visualize alpha diversity measures</h3>
+</section><section id="sec-plot-diversity" class="level3 page-columns page-full" data-number="14.2.2"><h3 data-number="14.2.2" class="anchored" data-anchor-id="sec-plot-diversity">
+<span class="header-section-number">14.2.2</span> Visualize alpha diversity measures</h3>
 <p>As alpha diversity metrics typically summarize high-dimensional samples into singular values, many visualization approaches are available. Once calculated, these metrics can be analyzed directly from the <code>colData</code>, for example, by plotting them using <code><a href="https://rdrr.io/pkg/scater/man/plotColData.html">plotColData()</a></code> from the <code>scater</code> package <span class="citation" data-cites="R_scater">(<a href="#ref-R_scater" role="doc-biblioref">McCarthy et al. 2020</a>)</span>. Here, we use the <code>observed</code> species as a measure of richness. Let’s visualize the results against selected <code>colData</code> variables (sample type and final barcode).</p>
 <div class="no-row-height column-margin column-container"><div id="ref-R_scater" class="csl-entry" role="listitem">
 McCarthy, Davis, Kieran Campbell, Aaron Lun, and Quin Wills. 2020. <em>Scater: Single-Cell Analysis Toolkit for Gene Expression Data in r</em>. <a href="http://bioconductor.org/packages/scater/">http://bioconductor.org/packages/scater/</a>.
@@ -1267,40 +1231,38 @@ McCarthy, Davis, Kieran Campbell, Aaron Lun, and Quin Wills. 2020. <em>Scater: S
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://bioconductor.org/packages/scater/">scater</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/scater/man/plotColData.html">plotColData</a></span><span class="op">(</span></span>
 <span>    <span class="va">tse</span>,</span>
-<span>    <span class="st">"observed"</span>,</span>
+<span>    <span class="st">"observed_richness"</span>,</span>
 <span>    <span class="st">"SampleType"</span>,</span>
 <span>    colour_by <span class="op">=</span> <span class="st">"Final_Barcode"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">45</span>, hjust <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Sample types"</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/expression.html">expression</a></span><span class="op">(</span><span class="va">Richness</span><span class="op">[</span><span class="va">Observed</span><span class="op">]</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Sample types"</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/expression.html">expression</a></span><span class="op">(</span><span class="va">Richness</span><span class="op">[</span><span class="va">observed_richness</span><span class="op">]</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="alpha_diversity_files/figure-html/plot-richness-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="alpha_diversity_files/figure-html/plot_richness-1.png" class="img-fluid figure-img" width="672"></p>
 <figcaption>Observerd richness plotted grouped by sample type with colour-labeled barcode.</figcaption></figure>
 </div>
 </div>
 </div>
-<section id="sec-compare-alpha" class="level4" data-number="13.2.2.1"><h4 data-number="13.2.2.1" class="anchored" data-anchor-id="sec-compare-alpha">
-<span class="header-section-number">13.2.2.1</span> Alpha diversity measure comparisons</h4>
+<section id="sec-compare-alpha" class="level4 page-columns page-full" data-number="14.2.2.1"><h4 data-number="14.2.2.1" class="anchored" data-anchor-id="sec-compare-alpha">
+<span class="header-section-number">14.2.2.1</span> Alpha diversity measure comparisons</h4>
 <p>We can compare alpha diversities for example by calculating correlation between them. Below, a visual comparison between shannon and faith indices is shown with a scatter plot.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">tse</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mia/man/addAlpha.html">addAlpha</a></span><span class="op">(</span><span class="va">tse</span>, assay.type <span class="op">=</span> <span class="st">"counts"</span>, index <span class="op">=</span> <span class="st">"shannon"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/scater/man/plotColData.html">plotColData</a></span><span class="op">(</span><span class="va">tse</span>, x <span class="op">=</span> <span class="st">"shannon"</span>, y <span class="op">=</span> <span class="st">"faith"</span><span class="op">)</span> <span class="op">+</span></span>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/scater/man/plotColData.html">plotColData</a></span><span class="op">(</span><span class="va">tse</span>, x <span class="op">=</span> <span class="st">"shannon_diversity"</span>, y <span class="op">=</span> <span class="st">"faith_diversity"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x<span class="op">=</span><span class="st">"Shannon index"</span>, y<span class="op">=</span><span class="st">"Faith (phylogenetic) index"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="alpha_diversity_files/figure-html/compare-diversities-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="624"></p>
+<figure class="figure"><p><img src="alpha_diversity_files/figure-html/compare_diversities-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="624"></p>
 </figure>
 </div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/cor.test.html">cor.test</a></span><span class="op">(</span><span class="va">tse</span><span class="op">[[</span><span class="st">"shannon"</span><span class="op">]</span><span class="op">]</span>, <span class="va">tse</span><span class="op">[[</span><span class="st">"faith"</span><span class="op">]</span><span class="op">]</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/cor.test.html">cor.test</a></span><span class="op">(</span><span class="va">tse</span><span class="op">[[</span><span class="st">"shannon_diversity"</span><span class="op">]</span><span class="op">]</span>, <span class="va">tse</span><span class="op">[[</span><span class="st">"faith_diversity"</span><span class="op">]</span><span class="op">]</span><span class="op">)</span></span>
 <span><span class="co">##  </span></span>
 <span><span class="co">##      Pearson's product-moment correlation</span></span>
 <span><span class="co">##  </span></span>
-<span><span class="co">##  data:  tse[["shannon"]] and tse[["faith"]]</span></span>
+<span><span class="co">##  data:  tse[["shannon_diversity"]] and tse[["faith_diversity"]]</span></span>
 <span><span class="co">##  t = 2.2, df = 24, p-value = 0.04</span></span>
 <span><span class="co">##  alternative hypothesis: true correlation is not equal to 0</span></span>
 <span><span class="co">##  95 percent confidence interval:</span></span>
@@ -1314,12 +1276,17 @@ McCarthy, Davis, Kieran Campbell, Aaron Lun, and Quin Wills. 2020. <em>Scater: S
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://patchwork.data-imaginist.com">patchwork</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Create the plots</span></span>
+<span><span class="va">indices</span> <span class="op">&lt;-</span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span></span>
+<span>    <span class="st">"observed_richness"</span>, <span class="st">"dbp_dominance"</span>, <span class="st">"shannon_diversity"</span>,</span>
+<span>    <span class="st">"faith_diversity"</span></span>
+<span><span class="op">)</span></span>
 <span><span class="va">plots</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span></span>
-<span>    <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"observed"</span>, <span class="st">"shannon"</span>, <span class="st">"faith"</span><span class="op">)</span>,</span>
+<span>    <span class="va">indices</span>,</span>
 <span>    <span class="va">plotColData</span>,</span>
 <span>    object <span class="op">=</span> <span class="va">tse</span>,</span>
 <span>    x <span class="op">=</span> <span class="st">"SampleType"</span>,</span>
-<span>    colour_by <span class="op">=</span> <span class="st">"SampleType"</span><span class="op">)</span></span>
+<span>    colour_by <span class="op">=</span> <span class="st">"SampleType"</span></span>
+<span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Fine-tune visual appearance</span></span>
 <span><span class="va">plots</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span></span>
@@ -1333,21 +1300,29 @@ McCarthy, Davis, Kieran Campbell, Aaron Lun, and Quin Wills. 2020. <em>Scater: S
 <span>  <span class="fu"><a href="https://patchwork.data-imaginist.com/reference/plot_layout.html">plot_layout</a></span><span class="op">(</span>guides <span class="op">=</span> <span class="st">"collect"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="alpha_diversity_files/figure-html/plot-all-diversities-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="624"></p>
+<figure class="figure"><p><img src="alpha_diversity_files/figure-html/plot_all_diversities-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="624"></p>
 </figure>
 </div>
 </div>
 </div>
-</section></section><section id="sec-stats-diversity" class="level3" data-number="13.2.3"><h3 data-number="13.2.3" class="anchored" data-anchor-id="sec-stats-diversity">
-<span class="header-section-number">13.2.3</span> Statistical analysis of alpha diversity measures</h3>
+<p>All these different metrics provide information from different aspects of alpha diversity, notably on richness, dominance, information, and phylogenetic diversity described in <span class="citation" data-cites="Cassol2025">(<a href="#ref-Cassol2025" role="doc-biblioref">Cassol, Ibañez, and Bustamante 2025</a>)</span>. It is recommended to interpret these aspects separately and together.</p>
+<div class="no-row-height column-margin column-container"><div id="ref-Cassol2025" class="csl-entry" role="listitem">
+Cassol, Ignacio, Mauro Ibañez, and Juan Pablo Bustamante. 2025. <span>“Key Features and Guidelines for the Application of Microbial Alpha Diversity Metrics.”</span> <em>Scientific Reports</em> 15 (1). <a href="https://doi.org/10.1038/s41598-024-77864-y">https://doi.org/10.1038/s41598-024-77864-y</a>.
+</div></div><p>From our example, we can observe that soil and freshwater (creek) have the highest number of different taxonomic features present while tongue microbiome has the lowest richness, suggesting greater biodiversity in soil and freshwater samples.</p>
+<p>Based on the dominance values, species abundances in the soil samples appeared to be relatively evenly distributed. In contrast, the freshwater microbiome — particularly in the freshwater creek samples — was dominated by a single species, despite showing high observed richness.</p>
+<p>These observations are supported by the Shannon index, which accounts for both richness and dominance. Soil samples showed the highest Shannon diversity, reflecting their high number of observed species and relatively even species distribution.</p>
+<p>Soil and freshwater creek environments host a wide range of phylogenetically diverse organisms, indicating that the observed taxonomic features are not closely related but rather distinct from one another in terms of their evolutionary history.</p>
+<p>In summary, soil samples exhibit the highest biodiversity, while human-derived samples show less variation in terms of species composition and evolutionary diversity.</p>
+</section></section><section id="sec-stats-diversity" class="level3" data-number="14.2.3"><h3 data-number="14.2.3" class="anchored" data-anchor-id="sec-stats-diversity">
+<span class="header-section-number">14.2.3</span> Statistical analysis of alpha diversity measures</h3>
 <p>We can then analyze the statistical significance. We use the non-parametric Wilcoxon or Mann-Whitney test, as it is more flexible than the commonly used Student’s t-Test, since it does not assume normality.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/pairwise.wilcox.test.html">pairwise.wilcox.test</a></span><span class="op">(</span></span>
-<span>    <span class="va">tse</span><span class="op">[[</span><span class="st">"observed"</span><span class="op">]</span><span class="op">]</span>, <span class="va">tse</span><span class="op">[[</span><span class="st">"SampleType"</span><span class="op">]</span><span class="op">]</span>, p.adjust.method <span class="op">=</span> <span class="st">"fdr"</span><span class="op">)</span></span>
+<span>    <span class="va">tse</span><span class="op">[[</span><span class="st">"observed_richness"</span><span class="op">]</span><span class="op">]</span>, <span class="va">tse</span><span class="op">[[</span><span class="st">"SampleType"</span><span class="op">]</span><span class="op">]</span>, p.adjust.method <span class="op">=</span> <span class="st">"fdr"</span><span class="op">)</span></span>
 <span><span class="co">##  </span></span>
 <span><span class="co">##      Pairwise comparisons using Wilcoxon rank sum exact test </span></span>
 <span><span class="co">##  </span></span>
-<span><span class="co">##  data:  tse[["observed"]] and tse[["SampleType"]] </span></span>
+<span><span class="co">##  data:  tse[["observed_richness"]] and tse[["SampleType"]] </span></span>
 <span><span class="co">##  </span></span>
 <span><span class="co">##                     Feces Freshwater Freshwater (creek) Mock Ocean</span></span>
 <span><span class="co">##  Freshwater         0.4   -          -                  -    -    </span></span>
@@ -1370,8 +1345,8 @@ McCarthy, Davis, Kieran Campbell, Aaron Lun, and Quin Wills. 2020. <em>Scater: S
 <span><span class="co">##  </span></span>
 <span><span class="co">##  P value adjustment method: fdr</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="visualizing-significance-in-group-wise-comparisons" class="level4" data-number="13.2.3.1"><h4 data-number="13.2.3.1" class="anchored" data-anchor-id="visualizing-significance-in-group-wise-comparisons">
-<span class="header-section-number">13.2.3.1</span> Visualizing significance in group-wise comparisons</h4>
+<section id="visualizing-significance-in-group-wise-comparisons" class="level4" data-number="14.2.3.1"><h4 data-number="14.2.3.1" class="anchored" data-anchor-id="visualizing-significance-in-group-wise-comparisons">
+<span class="header-section-number">14.2.3.1</span> Visualizing significance in group-wise comparisons</h4>
 <p>Next, let’s compare the Shannon index between sample groups and visualize the statistical significance. Using the <code>stat_compare_means</code> function from the <code>ggpubr</code> package, we can add visually appealing p-values to our plots.</p>
 <p>To add adjusted p-values, we have to first calculate them.</p>
 <div class="cell" data-layout-align="center">
@@ -1379,7 +1354,7 @@ McCarthy, Davis, Kieran Campbell, Aaron Lun, and Quin Wills. 2020. <em>Scater: S
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
 <span></span>
 <span></span>
-<span><span class="va">index</span> <span class="op">&lt;-</span> <span class="st">"shannon"</span></span>
+<span><span class="va">index</span> <span class="op">&lt;-</span> <span class="st">"shannon_diversity"</span></span>
 <span><span class="va">group_var</span> <span class="op">&lt;-</span> <span class="st">"SampleType"</span></span>
 <span></span>
 <span><span class="co"># Subsets the data. Takes only those samples that are from feces, skin, or</span></span>
@@ -1429,14 +1404,42 @@ McCarthy, Davis, Kieran Campbell, Aaron Lun, and Quin Wills. 2020. <em>Scater: S
 <span><span class="va">p</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="alpha_diversity_files/figure-html/visualize-shannon-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
+<figure class="figure"><p><img src="alpha_diversity_files/figure-html/visualize_shannon-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-</section></section></section><section id="further-reading" class="level2" data-number="13.3"><h2 data-number="13.3" class="anchored" data-anchor-id="further-reading">
-<span class="header-section-number">13.3</span> Further reading</h2>
+</section></section></section><section id="further-reading" class="level2" data-number="14.3"><h2 data-number="14.3" class="anchored" data-anchor-id="further-reading">
+<span class="header-section-number">14.3</span> Further reading</h2>
 <p>Article on <a href="http://www.sthda.com/english/articles/24-ggpubr-publication-ready-plots/76-add-p-values-and-significance-levels-to-ggplots/"><code>ggpubr</code> package</a> provides further examples for estimating and highlighting significances.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercises
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Goal:</strong> The goal of these exercises is to learn to calculate alpha diversities and to compare them between sample groups.</p>
+<p><strong>Exercise 1: Alpha diversity</strong></p>
+<ol type="1">
+<li><p>Load any of the example datasets mentioned in <a href="import.html#sec-example-data" class="quarto-xref"><span>Section 4.2</span></a>.</p></li>
+<li><p>Calculate Shannon diversity index, and add the results to <code><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html">colData()</a></code>.</p></li>
+<li><p>Observe <code>colData</code>, especially its column names.</p></li>
+<li><p>Summarize the distribution of Shannon diversity with a histogram. Is there variance in alpha diversities?</p></li>
+<li><p>Calculate Shannon diversity index with rarefaction and store it to <code>colData</code> as column <code>"shannon_rarefaction"</code>.</p></li>
+<li><p>Calculate correlation between Shannon indices, with and without rarefaction. Do they correlate? If the correlation is relatively weak, what might explain this? If they correlate very strongly, why is that? What rarefaction does and for what it can be used?</p></li>
+<li><p>Visualize the correlation.</p></li>
+<li><p>Calculate all available indices.</p></li>
+<li><p>Visualize single diversity index in respect to some sample grouping that you can find from <code>colData</code>. Can you see difference between groups?</p></li>
+<li><p>Calculate statistical significance of difference in selected alpha diversity index between the sample groups. Do the results confirm your observation in step 9?</p></li>
+</ol>
+<p>Useful functions:</p>
+<p><code><a href="https://rdrr.io/r/utils/data.html">utils::data()</a></code>, <code><a href="https://rdrr.io/pkg/mia/man/addAlpha.html">mia::addAlpha()</a></code>, <code><a href="https://rdrr.io/pkg/miaViz/man/plotHistogram.html">miaViz::plotHistogram()</a></code>, <code><a href="https://rdrr.io/pkg/mia/man/getCrossAssociation.html">mia::getCrossAssociation()</a></code>, <code><a href="https://rdrr.io/pkg/scater/man/plotColData.html">scater::plotColData()</a></code>, <code>geom_smooth(method = "lm")</code>, <code><a href="https://rdrr.io/r/stats/wilcox.test.html">stats::wilcox.test()</a></code>, <code><a href="https://rdrr.io/r/stats/pairwise.wilcox.test.html">stats::pairwise.wilcox.test()</a></code>, <code><a href="https://rdrr.io/r/stats/kruskal.test.html">stats::kruskal.test()</a></code></p>
+</div>
+</div>
 
 
 
@@ -1666,8 +1669,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -1778,7 +1779,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -2005,12 +2005,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="../pages/composition.html" class="pagination-link" aria-label="Community composition">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Community composition</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Community composition</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../pages/beta_diversity.html" class="pagination-link" aria-label="Community similarity">
-        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Community similarity</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../pages/community_similarity.html" class="pagination-link" aria-label="Community similarity">
+        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Community similarity</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

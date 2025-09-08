@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.42">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>1&nbsp; Microbiome data science in Bioconductor – Orchestrating Microbiome Analysis</title>
 <style>
@@ -54,12 +54,12 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2fa0555fe88427c29efa1b60aaf9e62d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-6d7e7b9b3dbd114c66b233ded7072392.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-e9b1f05d37f4fab6e8a1aa1b10d398e4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-ef517e6d634b33e32ea14de8514fe376.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -229,30 +229,12 @@ div.csl-indent {
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data wrangling</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../pages/subsetting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Subsetting</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../pages/agglomeration.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Agglomeration</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../pages/transformation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Transformation</span></span></a>
-  </div>
-</li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
- <span class="menu-text">Exploration &amp; QC</span></a>
+ <span class="menu-text">QC &amp; preprocessing</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -260,14 +242,32 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../pages/quality_control.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Exploration &amp; quality control</span></span></a>
+  <a href="../pages/preprocess.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">QC &amp; preprocessing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../pages/composition.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Community composition</span></span></a>
+  <a href="../pages/quality_control.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Exploration &amp; quality control</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/subsetting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Subsetting</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/agglomeration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Agglomeration</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/transformation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Transformation</span></span></a>
   </div>
 </li>
       </ul>
@@ -283,20 +283,26 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../pages/alpha_diversity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Alpha Diversity</span></span></a>
+  <a href="../pages/composition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Community composition</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../pages/beta_diversity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Community similarity</span></span></a>
+  <a href="../pages/alpha_diversity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Alpha diversity</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/community_similarity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Community similarity</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../pages/clustering.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Community typing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Community typing</span></span></a>
   </div>
 </li>
       </ul>
@@ -313,19 +319,19 @@ div.csl-indent {
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../pages/differential_abundance.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Differential abundance</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Differential abundance</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../pages/correlation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../pages/mediation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Mediation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Mediation</span></span></a>
   </div>
 </li>
       </ul>
@@ -342,13 +348,13 @@ div.csl-indent {
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../pages/network_learning.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Network learning &amp; analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Network learning &amp; analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../pages/network_comparison.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Network comparison</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Network comparison</span></span></a>
   </div>
 </li>
       </ul>
@@ -364,20 +370,26 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../pages/multiomics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Multi-omics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../pages/cross_correlation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Cross-association</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Cross-association</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../pages/multiassay_ordination.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Ordination-based multiassay analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Ordination-based multiassay analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../pages/integrated_learner.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Multi-omics prediction and classification</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Multi-omics prediction and classification</span></span></a>
   </div>
 </li>
       </ul>
@@ -394,13 +406,7 @@ div.csl-indent {
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../pages/machine_learning.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Machine learning</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../pages/statistical_modeling.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Statistical modeling</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Machine learning</span></span></a>
   </div>
 </li>
       </ul>
@@ -408,7 +414,7 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
- <span class="menu-text">Workflows</span></a>
+ <span class="menu-text">Training</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -416,20 +422,14 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../pages/introductory_workflow.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Introductory</span></span></a>
+  <a href="../pages/training.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Training</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../pages/introductory_workflow_french_version.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Introductory (French)</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../pages/introductory_workflow_dutch_version.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Introductory (Dutch)</span></span></a>
+  <a href="../pages/exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Exercises</span></span></a>
   </div>
 </li>
       </ul>
@@ -437,7 +437,7 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
- <span class="menu-text">Training</span></a>
+ <span class="menu-text">Support &amp; resources</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -445,14 +445,20 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../pages/training.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Training</span></span></a>
+  <a href="../pages/support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Support</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../pages/exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Exercises</span></span></a>
+  <a href="../pages/resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Resources</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/contributions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Contributions</span></span></a>
   </div>
 </li>
       </ul>
@@ -460,41 +466,12 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false">
- <span class="menu-text">Support &amp; resources</span></a>
+ <span class="menu-text">Appendices</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../pages/support.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Support</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../pages/resources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Resources</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../pages/acknowledgments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Contributions</span></span></a>
-  </div>
-</li>
-      </ul>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
- <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../pages/msea.html" class="sidebar-item-text sidebar-link">
@@ -509,14 +486,14 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../pages/extra_material.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Extra material</span></span></a>
+  <a href="../pages/phyloseq_cheatsheet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">phyloseq vs TreeSE cheatsheet</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../pages/visualization.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Visualization</span></span></a>
+  <a href="../pages/example_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Example solutions for exercises</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -634,8 +611,8 @@ Huber, W., V. J. Carey, R. Gentleman, S. Anders, M. Carlson, B. S. Carvalho, H. 
 Marchesi, Julian R., and Jacques Ravel. 2015. <span>“The Vocabulary of Microbiome Research: A Proposal.”</span> <em>Microbiome</em> 3 (1). <a href="https://doi.org/10.1186/s40168-015-0094-5">https://doi.org/10.1186/s40168-015-0094-5</a>.
 </div><div id="ref-McMurdie2013" class="csl-entry" role="listitem">
 McMurdie, PJ, and S Holmes. 2013. <span>“<span><em>Phyloseq:</em></span> An r Package for Reproducible Interactive Analysis and Graphics of Microbiome Census Data.”</span> <em>PLoS ONE</em> 8: e61217. <a href="https://doi.org/10.1371/journal.pone.0061217">https://doi.org/10.1371/journal.pone.0061217</a>.
-</div></div><p>The <code>phyloseq</code> data container has been dominant in the microbiome field within Bioconductor over the past decade <span class="citation" data-cites="McMurdie2013">(<a href="#ref-McMurdie2013" role="doc-biblioref">McMurdie and Holmes 2013</a>)</span>. However, there has been a growing popularity of tools based on the <code>SummarizedExperiment</code> framework.</p>
-<p>An optimal data container should efficiently store and manage large volumes of data, including modified or transformed copies. Furthermore, it should seamlessly integrate into the broader ecosystem of Bioconductor, minimizing duplication of effort and facilitating interoperability with other tools and packages.</p>
+</div></div><p>The <code>phyloseq</code> data container has been dominant in the microbiome field within Bioconductor over the past decade <span class="citation" data-cites="McMurdie2013">(<a href="#ref-McMurdie2013" role="doc-biblioref">McMurdie and Holmes 2013</a>)</span>. However, the data container no longer adequately meets the needs of current research, as it was originally developed for 16S sequencing data. For instance, incorporating diverse multi-omics datasets has become increasingly common.</p>
+<p>An optimal data container should efficiently store and manage large volumes of data, including modified or transformed copies of different measurements. Furthermore, it should seamlessly integrate into the broader ecosystem of Bioconductor, minimizing duplication of effort and facilitating interoperability with other tools and packages.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="figures/optimal_data_container.png" class="img-fluid figure-img" style="width:50.0%"></p>
 <figcaption>Optimal data container.</figcaption></figure>
@@ -645,7 +622,7 @@ McMurdie, PJ, and S Holmes. 2013. <span>“<span><em>Phyloseq:</em></span> An r 
 Huang, Ruizhu, Charlotte Soneson, Felix G. M. Ernst, et al. 2021. <span>“TreeSummarizedExperiment: A S4 Class for Data with Hierarchical Structure [Version 2; Peer Review: 3 Approved].”</span> <em>F1000Research</em> 9: 1246. <a href="https://doi.org/10.12688/f1000research.26669.2">https://doi.org/10.12688/f1000research.26669.2</a>.
 </div></div></section><section id="sec-open-data" class="level2 page-columns page-full" data-number="1.3"><h2 data-number="1.3" class="anchored" data-anchor-id="sec-open-data">
 <span class="header-section-number">1.3</span> Open data science</h2>
-<p>Open data science emphasizes sharing code and, where feasible, data alongside results <span class="citation" data-cites="Shetty2019">(<a href="#ref-Shetty2019" role="doc-biblioref">Shetty and Lahti 2019</a>)</span>. Utilizing Bioconductor tools facilitates the development of efficient and reproducible data science workflows. Enhanced transparency in research accelerates scientific progress. As open science is a fundamental concept in microbiome research, this book, particularly in <a href="training.html" class="quarto-xref"><span>Chapter 29</span></a> aims to educate readers about reproducible reporting practices.</p>
+<p>Open data science emphasizes sharing code and, where feasible, data alongside results <span class="citation" data-cites="Shetty2019">(<a href="#ref-Shetty2019" role="doc-biblioref">Shetty and Lahti 2019</a>)</span>. Utilizing Bioconductor tools facilitates the development of efficient and reproducible data science workflows. Enhanced transparency in research accelerates scientific progress. As open science is a fundamental concept in microbiome research, this book aims to educate readers about reproducible reporting practices.</p>
 <div class="no-row-height column-margin column-container"><div id="ref-Shetty2019" class="csl-entry" role="listitem">
 Shetty, Sudarshan, and Leo Lahti. 2019. <span>“Microbiome Data Science.”</span> <em>Journal of Biosciences</em> 44: 115. <a href="https://doi.org/10.1007/s12038-019-9930-2">https://doi.org/10.1007/s12038-019-9930-2</a>.
 </div></div><div class="callout callout-style-default callout-tip callout-titled">
@@ -663,6 +640,96 @@ Summary
 <li>Data containers are fundamental in Bioconductor.</li>
 <li>SummarizedExperiment is the most common data container in Bioconductor.</li>
 </ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercises
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Exercise 1: Introduction to Bioconductor</strong></p>
+<p><strong>Goal:</strong> Learn how to navigate Bioconductor website and get idea on the available packages.</p>
+<ol type="1">
+<li>Go to <a href="https://bioconductor.org/">Bioconductor website</a>.</li>
+<li>Navigate to “Packages” section.</li>
+<li>Search for packages with the biocViews category “microbiome”. How many different packages are available?</li>
+<li>Look up the mia package. What is its current version? Is it released or devel version?</li>
+<li>Locate the mia package’s Reference Manual. When was it last updated?</li>
+</ol>
+<hr>
+<p><strong>Reproducible reporting with Quarto</strong></p>
+<p>Before starting, read the <a href="https://quarto.org/docs/tools/rstudio.html">Quarto guidelines for RStudio</a>. This will help you understand the basics.</p>
+<p><strong>Exercise 2: Creating a Quarto Document</strong></p>
+<p><strong>Goal:</strong> Learn how to create a Quarto document, add text, and structure content with Markdown.</p>
+<ol type="1">
+<li>Open RStudio and create a new Quarto file.</li>
+<li>In the YAML metadata section at the top, change <code>title: Untitled</code> to <code>title: "My First Quarto"</code>.</li>
+<li>Add a section with the heading <code># My first section</code> and write a short paragraph underneath.</li>
+<li>Add a subsection <code>## List of items</code> and create:
+<ul>
+<li>An ordered list (e.g., <code>1. First item</code>)</li>
+<li>An unordered list (e.g., <code>- Bullet point</code>)</li>
+</ul>
+</li>
+<li>Add another subsection <code>## Link to web</code> and create a link to the <a href="https://microbiome.github.io/OMA/">OMA book</a> using <code>[text](url)</code>.</li>
+<li>Click <strong>Render</strong> and check how your document looks.</li>
+</ol>
+<p><strong>Expected Outcome:</strong> A properly structured Quarto document with headings, lists, and a clickable link.</p>
+<p><strong>Exercise 3: Adding code chunks</strong></p>
+<p><strong>Goal:</strong> Learn how to integrate R code within a Quarto document.</p>
+<ol type="1">
+<li><p>Open RStudio and create a new Quarto file.</p></li>
+<li><p><strong>Insert a code chunk</strong> by pressing <strong>Alt + Cmd + I</strong> (Mac) or <strong>Ctrl + Alt + I</strong> (Windows, Linux) or from navigation bar.</p></li>
+<li>
+<p>Inside the chunk, define:</p>
+<pre><code>A &lt;- "my name"
+B &lt;- 0</code></pre>
+</li>
+<li><p>Above the chunk, write: <code>Below is my first code chunk</code>.</p></li>
+<li>
+<p>Insert another chunk below and modify <code>B</code>:</p>
+<pre><code>B &lt;- B + 100</code></pre>
+</li>
+<li><p>Add a name for this the chunk: <code>Below I change variable B</code>.</p></li>
+<li><p>Display <code>A</code> and <code>B</code> dynamically in text using inline R code. For example, you can write “My name is A and I have B dogs”, where <code>A</code> and <code>B</code> are the variables above thus automatically updating the text based on their values.</p></li>
+</ol>
+<p><strong>Expected Outcome:</strong> Rendered document showing code execution, and dynamic text updates.</p>
+<p><strong>Exercise 4: Customizing code chunk output</strong></p>
+<p><strong>Goal:</strong> Learn to control visibility and formatting of code chunks.</p>
+<ol type="1">
+<li><p>Create a new Quarto file.</p></li>
+<li><p>Insert three labeled code chunks (<code>first_chunk</code>, <code>fig-box</code>, <code>tbl-coldata</code>).</p></li>
+<li>
+<p>Copy-paste the following code:</p>
+<pre><code>#| label: first_chunk
+#| code-fold: true
+#| code-summary: "Show the code"
+x &lt;- 1:10
+y &lt;- x^2</code></pre>
+<pre><code>#| label: fig-box
+#| fig-width: 10
+plot(x, y)</code></pre>
+<pre><code>#| label: tbl-coldata
+#| echo: false
+data.frame(x, y)</code></pre>
+</li>
+<li>
+<p>Render and observe:</p>
+<ul>
+<li>The code of first chunk is folded.</li>
+<li>The figure is wider.</li>
+<li>The table appears without showing its generating code.</li>
+</ul>
+</li>
+<li><p>Add <code>fig-cap</code> and <code>tbl-cap</code> options.</p></li>
+<li><p>Cross-reference the figure using <code>@fig-box</code>.</p></li>
+</ol>
+<p><strong>Expected Outcome:</strong> Cleaner output with formatted figures and tables.</p>
 </div>
 </div>
 
@@ -894,8 +961,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -1006,7 +1071,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
