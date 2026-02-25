@@ -1,8 +1,8 @@
 # ARG BIOC_VERSION
 # FROM bioconductor/bioconductor_docker:${BIOC_VERSION}
 FROM ghcr.io/bioconductor/bioc2u-builder:noble-bioc-3.22-r-4.5.2
-ARG GITHUB_PAT
-ENV GITHUB_PAT=${GITHUB_PAT}
+# ARG GITHUB_PAT
+# ENV GITHUB_PAT=${GITHUB_PAT}
 ENV QUARTO_VERSION="1.8.27"
 COPY . /opt/pkg
 
