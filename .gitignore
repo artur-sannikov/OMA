@@ -31,6 +31,3 @@ renv.lock
 cachix/.envrc
 cachix/.devenv
 cachix/.direnv
-
-# Nix stuff
-*.nix
