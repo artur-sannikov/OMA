@@ -6,6 +6,7 @@ bluster
 ComplexHeatmap
 curatedMetagenomicData
 dendextend
+DirichletMultinomial
 dplyr
 DT
 factoextra
