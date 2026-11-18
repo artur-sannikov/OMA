@@ -108,6 +108,69 @@ in the R console.
 with `setwd("/opt/pkg")`, but any modifications
 you make to the files _will not be saved_ if you restart the container.
 
+### Nix installation
+
+The repository includes a Nix environment with the R packages needed to build
+the book. By default, `default.nix` uses the `bioc-devel` channel, so it tracks
+the latest Bioconductor development packages (including _mia_ and _miaViz_).
+
+1. Install [Nix](https://nixos.org/download/) and optionally
+[direnv](https://direnv.net/).
+
+2. Regenerate `default.nix` to pick up the latest packages. Run this with any
+R installation that has [{rix}](https://docs.ropensci.org/rix/) installed, or
+with the existing Nix shell:
+
+```sh
+nix-shell --run 'Rscript generate_env.R'
+```
+
+Set `RIX_R_VERSION` to choose another channel. For example, use
+`RIX_R_VERSION=bleeding-edge Rscript generate_env.R` for the latest released
+CRAN and Bioconductor packages, or use a date from
+`rix::available_dates()` for a reproducible package set.
+
+3. Enter the environment:
+
+```sh
+cachix use rstats-on-nix   # optional, provides pre-built binaries
+direnv allow               # or: nix-shell
+```
+
+4. Render the book from inside the Nix shell:
+
+```sh
+Rscript -e 'BiocBook::preview(BiocBook::BiocBook("."))'
+```
+
+#### Cachix cache for forks
+
+To build and cache the Nix packages in your own fork without affecting the
+upstream repository, create a Cachix cache and add its auth token to your fork
+as the `CACHIX_AUTH` Actions secret. Then generate the fork-only workflow:
+
+```sh
+# Defaults to <your-github-username>-oma
+Rscript setup_fork_cachix.R
+
+# Or use a custom cache name
+Rscript setup_fork_cachix.R my-oma-cache
+```
+
+The generated workflow is guarded with
+`if: github.repository != 'microbiome/OMA'`, so it never runs in the upstream
+repository. It builds `default.nix` and pushes the resulting packages to your
+cache. Use the cache locally with:
+
+```sh
+cachix use <your-cache-name>
+```
+
+To contribute back to the main repository, create the pull request from a
+branch based on `upstream/devel` and include only the Quarto changes. Keep the
+Nix/Cachix files on the fork-only `rix-env` branch, never on the branch used
+for the upstream pull request.
+
 ### Troubleshooting
 
 Consult the package installation troubleshooting guide if you experience issues

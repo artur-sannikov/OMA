@@ -3,6 +3,10 @@ name: "Update cachix cache for development environment"
 on:
   push:
     branches: [rix-env]
+    paths:
+      - default.nix
+      - generate_env.R
+      - .github/workflows/cachix_dev_env.yaml
   workflow_dispatch:
 
 permissions:
@@ -10,17 +14,18 @@ permissions:
 
 jobs:
   r-update-cachix:
+    if: github.repository != 'microbiome/OMA'
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os: [ubuntu-latest]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Install Nix
         uses: DeterminateSystems/nix-installer-action@main
 
-      - uses: cachix/cachix-action@v15
+      - uses: cachix/cachix-action@v17
         with:
           name: microbiome-oma
           authToken: "${{ secrets.CACHIX_AUTH }}"
@@ -28,4 +33,5 @@ jobs:
       - run: nix-build default.nix
 
       - run: nix-store -qR --include-outputs $(nix-instantiate default.nix) | cachix push microbiome-oma
+
       - run: nix-shell --run "echo OK"

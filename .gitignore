@@ -32,3 +32,4 @@ renv.lock
 cachix/.envrc
 cachix/.devenv
 cachix/.direnv
+.direnv/
